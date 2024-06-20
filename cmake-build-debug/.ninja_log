@@ -1,0 +1,14 @@
+# ninja log v6
+8	540	7406246620382526	1_TwoSum/CMakeFiles/1_TwoSum.dir/Solution.cpp.obj	1eb61dead87d182b
+2	839	7406246620321747	1_TwoSum/CMakeFiles/1_TwoSum.dir/main.cpp.obj	c250c142fe548f39
+840	1005	7406246628698027	1_TwoSum/1_TwoSum.exe	2bf96d44814344c2
+8	747	7406252933337489	1_TwoSum/CMakeFiles/1_TwoSum.dir/main.cpp.obj	c250c142fe548f39
+748	868	7406252940738473	1_TwoSum/1_TwoSum.exe	2bf96d44814344c2
+21	853	7406285566333906	1_TwoSum/CMakeFiles/1_TwoSum.dir/Solution.cpp.obj	1eb61dead87d182b
+12	1003	7406285566253143	1_TwoSum/CMakeFiles/1_TwoSum.dir/main.cpp.obj	c250c142fe548f39
+1003	1155	7406285576150581	1_TwoSum/1_TwoSum.exe	2bf96d44814344c2
+12	642	7406285886099894	1_TwoSum/CMakeFiles/1_TwoSum.dir/Solution.cpp.obj	1eb61dead87d182b
+643	772	7406285892405150	1_TwoSum/1_TwoSum.exe	2bf96d44814344c2
+17	701	7406293240397138	1_TwoSum/CMakeFiles/1_TwoSum.dir/Solution.cpp.obj	1eb61dead87d182b
+7	837	7406293240301886	1_TwoSum/CMakeFiles/1_TwoSum.dir/main.cpp.obj	c250c142fe548f39
+838	983	7406293248598962	1_TwoSum/1_TwoSum.exe	2bf96d44814344c2
