@@ -23,6 +23,15 @@
 //Value Computed by CMake
 1_TwoSum_SOURCE_DIR:STATIC=C:/Users/royxa/Desktop/Leet/1_TwoSum
 
+//Value Computed by CMake
+2_AddTwoNumbers_BINARY_DIR:STATIC=C:/Users/royxa/Desktop/Leet/cmake-build-debug/2_AddTwoNumbers
+
+//Value Computed by CMake
+2_AddTwoNumbers_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+2_AddTwoNumbers_SOURCE_DIR:STATIC=C:/Users/royxa/Desktop/Leet/2_AddTwoNumbers
+
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=C:/Program Files/JetBrains/CLion 2024.1.4/bin/mingw/bin/addr2line.exe
 
@@ -363,7 +372,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=2
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=3
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

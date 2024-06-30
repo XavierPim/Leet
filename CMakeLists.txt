@@ -5,4 +5,5 @@ set(CMAKE_CXX_STANDARD 20)
 
 # Add subdirectories for each problem
 add_subdirectory("1_TwoSum")
+add_subdirectory("2_AddTwoNumbers")
 # Add other subdirectories as needed
