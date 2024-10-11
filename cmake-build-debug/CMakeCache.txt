@@ -41,6 +41,15 @@
 //Value Computed by CMake
 3_LongestSubNoRepeat_SOURCE_DIR:STATIC=C:/Users/royxa/Desktop/Leet/3_LongestSubNoRepeat
 
+//Value Computed by CMake
+4_MedianTwoSortedArr_BINARY_DIR:STATIC=C:/Users/royxa/Desktop/Leet/cmake-build-debug/4_MedianTwoSortedArr
+
+//Value Computed by CMake
+4_MedianTwoSortedArr_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+4_MedianTwoSortedArr_SOURCE_DIR:STATIC=C:/Users/royxa/Desktop/Leet/4_MedianTwoSortedArr
+
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=C:/Program Files/JetBrains/CLion 2024.2.2/bin/mingw/bin/addr2line.exe
 
@@ -378,7 +387,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

@@ -1,0 +1,4 @@
+#ifndef SOLUTION_HPP
+#define SOLUTION_HPP
+
+#endif //SOLUTION_HPP
