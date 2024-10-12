@@ -1,14 +1,11 @@
 #ifndef SOLUTION_HPP
 #define SOLUTION_HPP
 
-#include <stdlib.h>
-#include <stdio.h>
 #include <vector>
 using  namespace  std;
 class Solution {
 public:
     double findMedianSortedArray(vector<int>& nums1, vector<int> nums2);
-    double medianCal(vector<int> sortedArr;
 };
 
 #endif //SOLUTION_HPP
