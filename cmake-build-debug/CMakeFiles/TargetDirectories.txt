@@ -12,3 +12,6 @@ C:/Users/royxa/Desktop/Leet/cmake-build-debug/3_LongestSubNoRepeat/CMakeFiles/re
 C:/Users/royxa/Desktop/Leet/cmake-build-debug/4_MedianTwoSortedArr/CMakeFiles/4_MedianTwoSortedArr.dir
 C:/Users/royxa/Desktop/Leet/cmake-build-debug/4_MedianTwoSortedArr/CMakeFiles/edit_cache.dir
 C:/Users/royxa/Desktop/Leet/cmake-build-debug/4_MedianTwoSortedArr/CMakeFiles/rebuild_cache.dir
+C:/Users/royxa/Desktop/Leet/cmake-build-debug/5_LongestPalindromeSubstring/CMakeFiles/5_LongestPalindromeSubstring.dir
+C:/Users/royxa/Desktop/Leet/cmake-build-debug/5_LongestPalindromeSubstring/CMakeFiles/edit_cache.dir
+C:/Users/royxa/Desktop/Leet/cmake-build-debug/5_LongestPalindromeSubstring/CMakeFiles/rebuild_cache.dir
