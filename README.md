@@ -7,7 +7,7 @@
 | 2         | Add Two Numbers                                | [Link](#problem-2-add-two-numbers)                                |
 | 3         | Longest Substring Without Repeating Characters | [Link](#problem-3-longest-substring-without-repeating-characters) |
 | 4         | Median of Two Sorted Arrays                    | [Link](#problem-4-longest-substring-without-repeating-characters) |
-
+| 5         | Longest Palindromic Substring                  | [Link](#problem-4-longest-palindromic-substring)       |
 ---
 
 ## Problem #1: Two Sum
@@ -94,3 +94,4 @@ The problem asks for the longest palindromic substring in a given string. A brut
 ### Complexity:
 - **Time complexity**: O(n),  where n is the length of the string. For each character, we expand outward to check for palindromes, leading to quadratic time complexity.
 - **Space complexity**: O(1), since we are not using extra space except for variables to track indices and the resulting longest palindrome.
+  [Solution Code](5_LongestPalindromicSubstring/Solution.cpp)
