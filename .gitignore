@@ -1,56 +1,37 @@
-# Executables
+# CLion and CMake specific files
+clion-Debug-log.txt
+clion-environment.txt
+cmake_install.cmake
+CMakeCache.txt
+CMakeConfigureLog.yaml
+LastTest.log
+# CLion-specific files and directories
+.idea/
+*.iml
+
+# CMake-specific files
+CMakeFiles/
+Makefile
+
+# Build directories
+/build/
+*/cmake-build-debug/
+
+# Compiled object files and executables
+*.o
+*.obj
 *.exe
 *.out
+*.log
 *.a
 *.lib
 *.so
 *.dll
 *.dylib
 
-# CMake-generated files
-CMakeCache.txt
-CMakeFiles/
-CMakeCCompiler.cmake
-CMakeCXXCompiler.cmake
-CMakeRCCompiler.cmake
-cmake_install.cmake
-CMakeSystem.cmake
-CMakeDetermineCompilerABI_*.bin
-CMakeConfigureLog.yaml
-
-# Build artifacts
-*.obj
-*.o
-*.log
-*.bin
-
-# Other generated files
-rules.ninja
-toolchains-v1-*.json
-TargetDirectories.txt
-
-# Editor-based HTTP Client requests
-/httpRequests/
-
-# Datasource local storage ignored files
-/dataSources/
-dataSources.local.xml
-
-# Compiled object files and executables
-*.log
-
-# MinGW specific files
+# MinGW specific files (if you're using it)
 *.gdb
-*.dSYM/
 *.stackdump
 
-# VSCode specific files
-.vscode/
-
-# Default ignored files
-/shelf/
-/workspace.xml
-
-# OS specific files
-*.DS_Store
+# Windows specific files
 Thumbs.db
