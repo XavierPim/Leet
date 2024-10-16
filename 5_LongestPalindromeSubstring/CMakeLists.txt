@@ -1,0 +1,4 @@
+project(5_LongestPalindromSubstring)
+
+add_executable(5_LongestPalindromeSubstring main.cpp Solution.cpp)
+target_include_directories(5_LongestPalindromeSubstring PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})

@@ -8,4 +8,4 @@ add_subdirectory("1_TwoSum")
 add_subdirectory("2_AddTwoNumbers")
 add_subdirectory("3_LongestSubNoRepeat")
 add_subdirectory("4_MedianTwoSortedArr")
-# Add other subdirectories as needed
+add_subdirectory("5_LongestPalindromeSubstring")
