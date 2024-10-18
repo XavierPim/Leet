@@ -7,7 +7,8 @@
 | 2         | Add Two Numbers                                | [Link](#problem-2-add-two-numbers)                                |
 | 3         | Longest Substring Without Repeating Characters | [Link](#problem-3-longest-substring-without-repeating-characters) |
 | 4         | Median of Two Sorted Arrays                    | [Link](#problem-4-longest-substring-without-repeating-characters) |
-| 5         | Longest Palindromic Substring                  | [Link](#problem-4-longest-palindromic-substring)       |
+| 5         | Longest Palindromic Substring                  | [Link](#problem-4-longest-substring-without-repeating-characters) |
+| 6         | Zigzag Conversion                              | [Link](#problem-5-longest-palindromic-substring)                  |
 ---
 
 ## Problem #1: Two Sum
@@ -79,7 +80,7 @@ We maintain a window using two pointers, index and next. As next moves through t
 
 [Solution Code](4_MedianTwoSortedArr/Solution.cpp)
 
-## Problem #4: Longest Palindromic Substring
+## Problem #5: Longest Palindromic Substring
 
 ### Intuition:
 The problem asks for the longest palindromic substring in a given string. A brute-force approach would involve checking all possible substrings and verifying if they are palindromes, which is inefficient. Instead, we use the Expand Around Center technique. This approach is based on the observation that a palindrome mirrors around its center. For each character (and the space between each character), we expand outward as long as the substring remains a palindrome.
@@ -95,3 +96,19 @@ The problem asks for the longest palindromic substring in a given string. A brut
 - **Time complexity**: O(n),  where n is the length of the string. For each character, we expand outward to check for palindromes, leading to quadratic time complexity.
 - **Space complexity**: O(1), since we are not using extra space except for variables to track indices and the resulting longest palindrome.
   [Solution Code](5_LongestPalindromicSubstring/Solution.cpp)
+
+## Problem #6: Zigzag Conversion
+
+### Intuition:
+The goal of the problem is to rearrange a string in a zigzag pattern across a specified number of rows, then read the string row by row. Rather than creating a 2D grid explicitly, we can simulate the row traversal using a vector to store the characters for each row. As we iterate through the string, we switch directions (moving up or down) once we reach either the top or bottom row.
+
+### Approach:
+1. We initialize a vector of strings, where each string represents a row in the zigzag pattern.
+2. We iterate through each character of the input string and place it in the corresponding row of the vector.
+3. When we reach the top or bottom row, we change direction (up or down) accordingly.
+4. After processing all characters, we concatenate the strings from each row to obtain the final zigzagged string.
+
+### Complexity:
+- **Time complexity**: O(n), where n is the length of the input string. We process each character exactly once, inserting it into one of the rows.
+- **Space complexity**: O(n), where n is the length of the input string. We need additional space to store the characters in the row strings before combining them into the final result.
+  [Solution Code](6_ZigzagConversion/Solution.cpp)
