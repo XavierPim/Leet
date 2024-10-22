@@ -1,6 +1,5 @@
 #ifndef SOLUTION_HPP
 #define SOLUTION_HPP
-#include <stdlib.h>
 #include <string>
 class Solution {
 public:

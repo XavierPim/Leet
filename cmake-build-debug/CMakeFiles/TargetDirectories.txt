@@ -18,3 +18,6 @@ C:/Users/royxa/Desktop/Leet/cmake-build-debug/5_LongestPalindromeSubstring/CMake
 C:/Users/royxa/Desktop/Leet/cmake-build-debug/6_ZigzagConversion/CMakeFiles/6_ZigzagConversion.dir
 C:/Users/royxa/Desktop/Leet/cmake-build-debug/6_ZigzagConversion/CMakeFiles/edit_cache.dir
 C:/Users/royxa/Desktop/Leet/cmake-build-debug/6_ZigzagConversion/CMakeFiles/rebuild_cache.dir
+C:/Users/royxa/Desktop/Leet/cmake-build-debug/7_ReverseInteger/CMakeFiles/7_ReverseInteger.dir
+C:/Users/royxa/Desktop/Leet/cmake-build-debug/7_ReverseInteger/CMakeFiles/edit_cache.dir
+C:/Users/royxa/Desktop/Leet/cmake-build-debug/7_ReverseInteger/CMakeFiles/rebuild_cache.dir
