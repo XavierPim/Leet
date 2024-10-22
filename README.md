@@ -6,9 +6,11 @@
 | 1         | Two Sum                                        | [Link](#problem-1-two-sum)                                        |
 | 2         | Add Two Numbers                                | [Link](#problem-2-add-two-numbers)                                |
 | 3         | Longest Substring Without Repeating Characters | [Link](#problem-3-longest-substring-without-repeating-characters) |
-| 4         | Median of Two Sorted Arrays                    | [Link](#problem-4-longest-substring-without-repeating-characters) |
-| 5         | Longest Palindromic Substring                  | [Link](#problem-4-longest-substring-without-repeating-characters) |
-| 6         | Zigzag Conversion                              | [Link](#problem-5-longest-palindromic-substring)                  |
+| 4         | Median of Two Sorted Arrays                    | [Link](#problem-4-median-of-two-sorted-arrays)                    |
+| 5         | Longest Palindromic Substring                  | [Link](#problem-5-longest-palindromic-substring)                  |
+| 6         | Zigzag Conversion                              | [Link](#problem-6-zigzag-conversion)                              |
+| 7         | Reverse Integer                                | [Link](#problem-7-reverse-integer)                                |
+| 8         | Zigzag Conversion                              | [Link](#problem-8-string-to-integer)                              |
 ---
 
 ## Problem #1: Two Sum
@@ -66,7 +68,7 @@ We maintain a window using two pointers, `index` and `next`. As `next` moves thr
 
 [Solution Code](3_LongestSubNoRepeat/Solution.cpp)
 
-## Problem #4: Longest Substring Without Repeating Characters
+## Problem #4: Median of Two Sorted Arrays
 
 ### Intuition:
 The problem asks for the longest substring where no character repeats. Using a brute-force approach would involve generating all possible substrings, but this would be inefficient. Instead, we use a sliding window to dynamically check substrings without repeating characters.
@@ -95,7 +97,8 @@ The problem asks for the longest palindromic substring in a given string. A brut
 ### Complexity:
 - **Time complexity**: O(n),  where n is the length of the string. For each character, we expand outward to check for palindromes, leading to quadratic time complexity.
 - **Space complexity**: O(1), since we are not using extra space except for variables to track indices and the resulting longest palindrome.
-  [Solution Code](5_LongestPalindromicSubstring/Solution.cpp)
+ 
+[Solution Code](5_LongestPalindromicSubstring/Solution.cpp)
 
 ## Problem #6: Zigzag Conversion
 
@@ -111,4 +114,43 @@ The goal of the problem is to rearrange a string in a zigzag pattern across a sp
 ### Complexity:
 - **Time complexity**: O(n), where n is the length of the input string. We process each character exactly once, inserting it into one of the rows.
 - **Space complexity**: O(n), where n is the length of the input string. We need additional space to store the characters in the row strings before combining them into the final result.
-  [Solution Code](6_ZigzagConversion/Solution.cpp)
+  
+[Solution Code](6_ZigzagConversion/Solution.cpp)
+
+## Problem #7: Reverse Integer
+
+### Intuition:
+The problem is to reverse the digits of a given 32-bit signed integer. The main challenge is to ensure the reversal doesn't cause an overflow beyond the 32-bit integer range. We can approach this by extracting the digits one by one and building the reversed number while checking for overflow.
+
+### Approach:
+1. Initialize result to 0.
+2. Use a while loop to process the number:
+- - Extract the last digit of the integer by taking the modulus (x % 10).
+- - Multiply result by 10 and add the last digit to result.
+- - Divide the original integer by 10 to remove the last digit.
+- - Check if multiplying result by 10 would cause overflow (i.e., if the value exceeds the 32-bit signed integer limit).
+3. If no overflow occurs, return the reversed integer; otherwise, return 0.
+
+### Complexity:
+- **Time complexity**: O(logⁿ), where n is the number of digits in the integer (since we process each digit once).
+- **Space complexity**: O(1), since we only use a constant amount of extra space for the result, last digit, and input integer.
+ 
+[Solution Code](7_ReverseInteger/Solution.cpp)
+
+## Problem #8: String to Integer
+
+### Intuition:
+The problem is to convert a string to a 32-bit signed integer, following specific rules about leading/trailing spaces, optional signs, and non-numeric characters. The goal is to handle these edge cases and return a valid integer within the range of [-2³¹, 2³¹ - 1].
+
+### Approach:
+1. Ignore leading spaces: Start by skipping all leading whitespace characters.
+2. Check for sign: Determine if the number is positive or negative based on the first character.
+3. Convert characters to digits: Read characters one by one, converting them to an integer, and stop when a non-numeric character is encountered.
+4. Handle overflow: While building the integer, check if the result exceeds the 32-bit signed integer range and return INT_MAX or INT_MIN as appropriate.
+5. Return the result: Return the processed integer with the correct sign.
+
+### Complexity:
+- **Time complexity**: O(n), where n is the length of the string. We process each character of the string once.
+- **Space complexity**: O(1), since we only use a few variables for processing the string and storing the result.
+  
+[Solution Code](8_StringToInteger/Solution.cpp)
