@@ -1,11 +1,9 @@
-#ifndef SOLUTION_H
-#define SOLUTION_H
+#ifndef SOLUTION_HPP
+#define SOLUTION_HPP
 #include <cstdint>
 
 class Solution {
 public:
-    int reverse(int x) {
-        
-    }
+    int reverse(int x);
 };
-#endif SOLUTION_H
+#endif
