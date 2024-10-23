@@ -11,6 +11,7 @@
 | 6         | Zigzag Conversion                              | [Link](#problem-6-zigzag-conversion)                              |
 | 7         | Reverse Integer                                | [Link](#problem-7-reverse-integer)                                |
 | 8         | String to Integer                              | [Link](#problem-8-string-to-integer)                              |
+| 9         | Palindrome Number                              | [Link](#problem-9-palindrome-number)                              |
 ---
 
 ## Problem #1: Two Sum
@@ -154,3 +155,29 @@ The problem is to convert a string into a 32-bit signed integer, handling variou
 - **Space complexity**: O(1), since we only use a few variables for processing the string and storing the result.
   
 [Solution Code](8_StringToInteger/Solution.cpp)
+
+## Problem #9: Palindrome Number
+
+### Intuition:
+The goal of this problem is to determine if a given integer is a palindrome without converting it into a string. A number is a palindrome if it reads the same backward as forward. Instead of relying on string manipulation, we attempt to solve the problem using mathematical operations, leveraging the logarithmic properties to calculate the number of digits in the integer. This approach focuses on extracting the most and least significant digits and comparing them to check for symmetry.
+
+### Approach:
+1. Handle Edge Cases:
+- - If the integer is negative, return false since negative numbers can't be palindromes due to the negative sign.
+- - If the integer is 0, return true because 0 is a palindrome.
+2. Find the Number of Digits:
+- - To determine the number of digits in the integer, we use the formula floor(log10(x)) + 1, where x is the integer. This gives the total number of digits in the number.
+- - Extract and Compare Digits:
+
+3. Loop through half of the digits and compare the corresponding most significant and least significant digits.
+- - The least significant digit is extracted using modulus and division (x % 10).
+- - The most significant digit is extracted by dividing the number by the appropriate power of 10 to shift the digit to the least significant position.
+4. Return the Result:
+- - If all corresponding digits match, the number is a palindrome.
+- - If any mismatch is found, return false.
+
+### Complexity:
+- **Time complexity**:O(log₁₀(x)), where x is the given integer. The time complexity depends on the number of digits in the number. Since we compare each pair of digits only once, this results in logarithmic complexity.
+- **Space complexity**: O(1), as we only use a few variables to store results and perform the digit comparisons.
+
+[Solution Code]9_PalindromeNumber/Solution.cpp)
