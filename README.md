@@ -10,7 +10,7 @@
 | 5         | Longest Palindromic Substring                  | [Link](#problem-5-longest-palindromic-substring)                  |
 | 6         | Zigzag Conversion                              | [Link](#problem-6-zigzag-conversion)                              |
 | 7         | Reverse Integer                                | [Link](#problem-7-reverse-integer)                                |
-| 8         | Zigzag Conversion                              | [Link](#problem-8-string-to-integer)                              |
+| 8         | String to Integer                              | [Link](#problem-8-string-to-integer)                              |
 ---
 
 ## Problem #1: Two Sum
@@ -140,14 +140,14 @@ The problem is to reverse the digits of a given 32-bit signed integer. The main 
 ## Problem #8: String to Integer
 
 ### Intuition:
-The problem is to convert a string to a 32-bit signed integer, following specific rules about leading/trailing spaces, optional signs, and non-numeric characters. The goal is to handle these edge cases and return a valid integer within the range of [-2³¹, 2³¹ - 1].
+The problem is to convert a string into a 32-bit signed integer, handling various edge cases like leading/trailing spaces, optional signs ('+' or '-'), and non-numeric characters. The solution should also handle overflow by clamping the result within the 32-bit signed integer range [-2³¹, 2³¹ - 1].
 
 ### Approach:
-1. Ignore leading spaces: Start by skipping all leading whitespace characters.
-2. Check for sign: Determine if the number is positive or negative based on the first character.
-3. Convert characters to digits: Read characters one by one, converting them to an integer, and stop when a non-numeric character is encountered.
-4. Handle overflow: While building the integer, check if the result exceeds the 32-bit signed integer range and return INT_MAX or INT_MIN as appropriate.
-5. Return the result: Return the processed integer with the correct sign.
+1. Ignore leading spaces: Traverse the string and skip all leading whitespace characters.
+2. Check for sign: After skipping spaces, check if the next character is either a '+' or '-'. This determines whether the number will be positive or negative.
+3. Convert characters to digits: Loop through the remaining characters, convert them from their character representation to their numeric value, and construct the integer. Stop if a non-numeric character is encountered.
+4. Handle overflow: As you build the integer, check if multiplying by 10 and adding a new digit would cause overflow. If it does, return INT_MAX or INT_MIN as appropriate.
+5. Return the result: Multiply the integer by the sign and return the final result.
 
 ### Complexity:
 - **Time complexity**: O(n), where n is the length of the string. We process each character of the string once.
