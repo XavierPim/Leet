@@ -13,6 +13,7 @@
 | 8         | String to Integer                              | [Link](#problem-8-string-to-integer)                              |
 | 9         | Palindrome Number                              | [Link](#problem-9-palindrome-number)                              |
 | 10        | Regular Expression Matching                    | [Link](#problem-10-regular-expression-matching)                   |
+| 121       | Best Time to Buy and Sell                      | [Link](#problem-121-best-time-to-buy-and-sell-stock)              |
 ---
 
 ## Problem #1: Two Sum
@@ -184,12 +185,12 @@ The goal of this problem is to determine if a given integer is a palindrome with
 [Solution Code]9_PalindromeNumber/Solution.cpp)
 
 ## Problem #10: Regular Expression Matching
+
+### Intuition:
 The problem is to determine if a given string matches a pattern that can include wildcards. The pattern can contain:
 
 . which matches any single character.
 * which matches zero or more occurrences of the preceding element.
-### Intuition:
-
 ### Approach:
 1. Dynamic Programming (DP) Table Setup: Create a 2D DP table where dp[i][j] indicates whether the first i characters of the string match the first j characters of the pattern.
 2. Initialization: Initialize dp[0][0] to true, as an empty pattern matches an empty string. Handle cases where the pattern starts with *.
@@ -205,3 +206,21 @@ The problem is to determine if a given string matches a pattern that can include
 - **Space complexity**: O(n * m) for the DP table. However, this can be optimized to O(m) by only keeping track of the current and previous rows.
 
 [Solution Code]10_RegularExpressionMatching/Solution.cpp)
+
+## Problem #121: Best Time to Buy and Sell Stock
+
+### Intuition:
+The goal is to maximize profit by identifying the best day to buy and the best day to sell the stock within the given list of prices. The challenge lies in ensuring the buying day occurs before the selling day, so we’re essentially looking for the smallest price up to any point in the array and the maximum difference between any later price and this minimum.
+
+### Approach:
+1. Initialize the Minimum Price: Start with the first price as the initial smallest value. Track this as you iterate through the prices to determine the best potential buy price up to any given day.
+2. Iterate Through Prices:
+- For each price, if it’s less than the smallest price so far, update smallest and mark the day as the buying day.
+- If it’s greater than the smallest price but before the current selling day, calculate the difference (potential profit) between this price and the smallest price.
+- Track the largest difference found as maxProfit.
+3. Return Result: After finishing the iteration, maxProfit contains the highest possible profit, or 0 if no transaction is beneficial.
+### Complexity:
+- **Time complexity**: O(n) where n is the number of prices. We traverse the list once.
+- **Space complexity**: O(1), as we only use a few variables to track the smallest price, the maximum profit, and current indices for buy/sell days.
+
+[Solution Code]121_BestTimeToBuyAndSell/Solution.cpp)
