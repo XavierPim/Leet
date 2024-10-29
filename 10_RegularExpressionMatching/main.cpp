@@ -1,18 +1,19 @@
 #include <iostream>
 #include <string>
+#include <vector>
 #include "Solution.hpp"
 using namespace std;
 
 int main() {
-string s0 = "aa";
-string s1 = "aa";
-string s2 = "ab";
+    Solution solution;
+    vector<string> sList = {"abc", "abc", "abc", "aab", "", "mississippi"};
+    vector<string> pList = {"abc", "a.c", "a*b*c", "a*b*c", "", "mis*is*p*."};
 
-string p0="a";
-string p1= "a*";
-string p2=".*";
+    for (size_t i = 0; i < sList.size(); ++i) {
+        bool result = solution.isMatch(sList[i], pList[i]);
+        std::cout << "s: " << sList[i] << ", p: " << pList[i]
+                  << " -> " << (result ? "true" : "false") << std::endl;
+    }
 
-Solution solution;
-cout<< solution.isMatch(s0,p0) << endl;
-
+    return 0;
 }

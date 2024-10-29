@@ -12,6 +12,7 @@
 | 7         | Reverse Integer                                | [Link](#problem-7-reverse-integer)                                |
 | 8         | String to Integer                              | [Link](#problem-8-string-to-integer)                              |
 | 9         | Palindrome Number                              | [Link](#problem-9-palindrome-number)                              |
+| 10        | Regular Expression Matching                    | [Link](#problem-10-regular-expression-matching)                   |
 ---
 
 ## Problem #1: Two Sum
@@ -181,3 +182,26 @@ The goal of this problem is to determine if a given integer is a palindrome with
 - **Space complexity**: O(1), as we only use a few variables to store results and perform the digit comparisons.
 
 [Solution Code]9_PalindromeNumber/Solution.cpp)
+
+## Problem #10: Regular Expression Matching
+The problem is to determine if a given string matches a pattern that can include wildcards. The pattern can contain:
+
+. which matches any single character.
+* which matches zero or more occurrences of the preceding element.
+### Intuition:
+
+### Approach:
+1. Dynamic Programming (DP) Table Setup: Create a 2D DP table where dp[i][j] indicates whether the first i characters of the string match the first j characters of the pattern.
+2. Initialization: Initialize dp[0][0] to true, as an empty pattern matches an empty string. Handle cases where the pattern starts with *.
+3. Filling the DP Table:
+- Iterate through each character in the string and the pattern.
+- If the current character in the pattern is *, check:
+- - If * represents zero occurrences of the preceding character (i.e., match dp[i][j-2]).
+- - If it represents one or more occurrences (i.e., match dp[i-1][j] if the current character in the string matches the character before *).
+- If the current character is a normal character or ., check if they match and propagate the match status from the previous characters.
+4. Final Result: The value of dp[n][m] (where n is the length of the string and m is the length of the pattern) will indicate whether the entire string matches the entire pattern.
+### Complexity:
+- **Time complexity**: O(n * m), where n is the length of the string and m is the length of the pattern. Each cell in the DP table is computed based on previous cells, leading to a nested iteration.
+- **Space complexity**: O(n * m) for the DP table. However, this can be optimized to O(m) by only keeping track of the current and previous rows.
+
+[Solution Code]10_RegularExpressionMatching/Solution.cpp)
