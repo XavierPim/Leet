@@ -182,7 +182,7 @@ The goal of this problem is to determine if a given integer is a palindrome with
 - **Time complexity**:O(log₁₀(x)), where x is the given integer. The time complexity depends on the number of digits in the number. Since we compare each pair of digits only once, this results in logarithmic complexity.
 - **Space complexity**: O(1), as we only use a few variables to store results and perform the digit comparisons.
 
-[Solution Code]9_PalindromeNumber/Solution.cpp)
+[Solution Code](9_PalindromeNumber/Solution.cpp)
 
 ## Problem #10: Regular Expression Matching
 
@@ -205,22 +205,31 @@ The problem is to determine if a given string matches a pattern that can include
 - **Time complexity**: O(n * m), where n is the length of the string and m is the length of the pattern. Each cell in the DP table is computed based on previous cells, leading to a nested iteration.
 - **Space complexity**: O(n * m) for the DP table. However, this can be optimized to O(m) by only keeping track of the current and previous rows.
 
-[Solution Code]10_RegularExpressionMatching/Solution.cpp)
+[Solution Code](10_RegularExpressionMatching/Solution.cpp)
 
 ## Problem #121: Best Time to Buy and Sell Stock
 
 ### Intuition:
-The goal is to maximize profit by identifying the best day to buy and the best day to sell the stock within the given list of prices. The challenge lies in ensuring the buying day occurs before the selling day, so we’re essentially looking for the smallest price up to any point in the array and the maximum difference between any later price and this minimum.
+The problem is to determine if a given integer array contains any duplicates. This means we need to check if any integer appears more than once in the array. A simple way to think about this is to keep track of the integers we encounter as we iterate through the array and see if we've seen any of them before.
 
 ### Approach:
-1. Initialize the Minimum Price: Start with the first price as the initial smallest value. Track this as you iterate through the prices to determine the best potential buy price up to any given day.
-2. Iterate Through Prices:
-- For each price, if it’s less than the smallest price so far, update smallest and mark the day as the buying day.
-- If it’s greater than the smallest price but before the current selling day, calculate the difference (potential profit) between this price and the smallest price.
-- Track the largest difference found as maxProfit.
-3. Return Result: After finishing the iteration, maxProfit contains the highest possible profit, or 0 if no transaction is beneficial.
-### Complexity:
-- **Time complexity**: O(n) where n is the number of prices. We traverse the list once.
-- **Space complexity**: O(1), as we only use a few variables to track the smallest price, the maximum profit, and current indices for buy/sell days.
 
-[Solution Code]121_BestTimeToBuyAndSell/Solution.cpp)
+Memory updated
+Here's the documentation for your solution:
+
+Problem #217: Contains Duplicate
+Intuition:
+The goal of this problem is to determine if there are any duplicate elements in the given vector of integers. Since the presence of duplicates can significantly affect the performance of algorithms, it is crucial to check for them efficiently.
+
+Approach:
+1. Utilize an Unordered Set: We can use an unordered set to track elements as we iterate through the vector.
+2. Iterate Through the Vector: For each element in the vector:
+- Check if it already exists in the set.
+- If it does, return true indicating a duplicate has been found.
+- If it doesn't, insert it into the set.
+3. Return False: If the iteration completes without finding duplicates, return false.
+
+### Complexity:
+- **Time complexity**: O(n) This approach runs in O(n) time complexity, where n is the number of elements in the vector, as it requires a single pass through the vector and utilizes O(n) space for the set.
+- **Space complexity**: O(1) as it exits out right after first detection
+[Solution Code](217_ContainsDuplicate/Solution.cpp)
