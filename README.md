@@ -14,6 +14,8 @@
 | 9         | Palindrome Number                              | [Link](#problem-9-palindrome-number)                              |
 | 10        | Regular Expression Matching                    | [Link](#problem-10-regular-expression-matching)                   |
 | 121       | Best Time to Buy and Sell                      | [Link](#problem-121-best-time-to-buy-and-sell-stock)              |
+| 217       | Contains Duplicate                             | [Link](#problem-217-contains-duplicate)                           |
+| 238       | Product of Array Except Self                   | [Link](#problem-217-product-of-array-except-self)                 |
 ---
 
 ## Problem #1: Two Sum
@@ -210,41 +212,27 @@ The problem is to determine if a given string matches a pattern that can include
 ## Problem #121: Best Time to Buy and Sell Stock
 
 ### Intuition:
-The problem is to determine if a given integer array contains any duplicates. This means we need to check if any integer appears more than once in the array. A simple way to think about this is to keep track of the integers we encounter as we iterate through the array and see if we've seen any of them before.
-
+The goal is to maximize profit by identifying the best day to buy and the best day to sell the stock within the given list of prices. The challenge lies in ensuring the buying day occurs before the selling day, so we’re essentially looking for the smallest price up to any point in the array and the maximum difference between any later price and this minimum.
 ### Approach:
-
-Memory updated
-Here's the documentation for your solution:
-
-Problem #217: Contains Duplicate
-Intuition:
-The goal of this problem is to determine if there are any duplicate elements in the given vector of integers. Since the presence of duplicates can significantly affect the performance of algorithms, it is crucial to check for them efficiently.
-
 Approach:
-1. Utilize an Unordered Set: We can use an unordered set to track elements as we iterate through the vector.
-2. Iterate Through the Vector: For each element in the vector:
-- Check if it already exists in the set.
-- If it does, return true indicating a duplicate has been found.
-- If it doesn't, insert it into the set.
-3. Return False: If the iteration completes without finding duplicates, return false.
+1. Initialize the Minimum Price: Start with the first price as the initial smallest value. Track this as you iterate through the prices to determine the best potential buy price up to any given day.
+2. Iterate Through Prices:
+- For each price, if it’s less than the smallest price so far, update smallest and mark the day as the buying day.
+- If it’s greater than the smallest price but before the current selling day, calculate the difference (potential profit) between this price and the smallest price.
+- Track the largest difference found as maxProfit.
+3. Return Result: After finishing the iteration, maxProfit contains the highest possible profit, or 0 if no transaction is beneficial.
 
 ### Complexity:
-- **Time complexity**: O(n) This approach runs in O(n) time complexity, where n is the number of elements in the vector, as it requires a single pass through the vector and utilizes O(n) space for the set.
-- **Space complexity**: O(1) as it exits out right after first detection
+- **Time complexity**: O(n) where n is the number of prices. We traverse the list once.
+- **Space complexity**: O(1), as we only use a few variables to track the smallest price, the maximum profit, and current indices for buy/sell days.
 [Solution Code](217_ContainsDuplicate/Solution.cpp)
 
-## Problem #121: Best Time to Buy and Sell Stock
+## Problem #217: Contains Duplicate
 
 ### Intuition:
 The problem is to determine if a given integer array contains any duplicates. This means we need to check if any integer appears more than once in the array. A simple way to think about this is to keep track of the integers we encounter as we iterate through the array and see if we've seen any of them before.
 
 ### Approach:
-
-Memory updated
-Here's the documentation for your solution:
-
-Problem #217: Contains Duplicate
 Intuition:
 The goal of this problem is to determine if there are any duplicate elements in the given vector of integers. Since the presence of duplicates can significantly affect the performance of algorithms, it is crucial to check for them efficiently.
 
@@ -259,4 +247,30 @@ Approach:
 - **Time complexity**: O(n) This approach runs in O(n) time complexity, where n is the number of elements in the vector, as it requires a single pass through the vector and utilizes O(n) space for the set.
 - **Space complexity**: O(1) as it exits out right after first detection
   [Solution Code](217_ContainsDuplicate/Solution.cpp)
+
+## Problem #238: Product of Array Except Self
+
+### Intuition:
+The problem requires calculating the product of all elements in the array except the current element, without using division in most cases. A simple approach would be to compute the total product and divide by each element, but this fails when there are zeros in the array. To handle zeros, we need a conditional approach:
+- If there’s one zero, only the index with zero should contain the product of non-zero elements.
+- If there are more than one zero, all products will be zero.
+### Approach:
+Initialize Variables:
+
+1. totalProduct to store the product of all non-zero elements.
+- hasZeroCount to track the number of zeros in the array.
+- Calculate Total Product (Ignoring Zeros):
+2. Iterate through nums and compute the product of all non-zero elements.
+- Track the count of zeros in hasZeroCount.
+- Check Zero Count Cases:
+3. If hasZeroCount > 1: Return an array filled with zeroes, as any product involving two or more zeros is zero.
+- If hasZeroCount == 1: Only the position of the zero in nums should contain totalProduct; other positions remain zero.
+- If hasZeroCount == 0: Populate answer[i] with totalProduct / nums[i] for each element, calculating the product except itself.
+4. Fill the Result Array:
+- Use another loop to populate answer based on the above conditions.
+
+### Complexity:
+- **Time complexity**: O(n), where n is the number of elements in nums, as we perform two single-pass iterations over the array.
+- **Space complexity**: O(1) (excluding output array), as we use a few extra variables (totalProduct, hasZeroCount) and the result array answer is returned.
+  [Solution Code](238_ProductOfArrayExceptSelf/Solution.cpp)
 
