@@ -233,3 +233,30 @@ Approach:
 - **Time complexity**: O(n) This approach runs in O(n) time complexity, where n is the number of elements in the vector, as it requires a single pass through the vector and utilizes O(n) space for the set.
 - **Space complexity**: O(1) as it exits out right after first detection
 [Solution Code](217_ContainsDuplicate/Solution.cpp)
+
+## Problem #121: Best Time to Buy and Sell Stock
+
+### Intuition:
+The problem is to determine if a given integer array contains any duplicates. This means we need to check if any integer appears more than once in the array. A simple way to think about this is to keep track of the integers we encounter as we iterate through the array and see if we've seen any of them before.
+
+### Approach:
+
+Memory updated
+Here's the documentation for your solution:
+
+Problem #217: Contains Duplicate
+Intuition:
+The goal of this problem is to determine if there are any duplicate elements in the given vector of integers. Since the presence of duplicates can significantly affect the performance of algorithms, it is crucial to check for them efficiently.
+
+Approach:
+1. Utilize an Unordered Set: We can use an unordered set to track elements as we iterate through the vector.
+2. Iterate Through the Vector: For each element in the vector:
+- Check if it already exists in the set.
+- If it does, return true indicating a duplicate has been found.
+- If it doesn't, insert it into the set.
+3. Return False: If the iteration completes without finding duplicates, return false
+### Complexity:
+- **Time complexity**: O(n) This approach runs in O(n) time complexity, where n is the number of elements in the vector, as it requires a single pass through the vector and utilizes O(n) space for the set.
+- **Space complexity**: O(1) as it exits out right after first detection
+  [Solution Code](217_ContainsDuplicate/Solution.cpp)
+
