@@ -1,21 +1,21 @@
 # LeetCode C++ Solutions
 
 ## Table of Contents
-| Problem # | Problem Name                                   | GoTo                                                              |
-|-----------|------------------------------------------------|-------------------------------------------------------------------|
-| 1         | Two Sum                                        | [Link](#problem-1-two-sum)                                        |
-| 2         | Add Two Numbers                                | [Link](#problem-2-add-two-numbers)                                |
-| 3         | Longest Substring Without Repeating Characters | [Link](#problem-3-longest-substring-without-repeating-characters) |
-| 4         | Median of Two Sorted Arrays                    | [Link](#problem-4-median-of-two-sorted-arrays)                    |
-| 5         | Longest Palindromic Substring                  | [Link](#problem-5-longest-palindromic-substring)                  |
-| 6         | Zigzag Conversion                              | [Link](#problem-6-zigzag-conversion)                              |
-| 7         | Reverse Integer                                | [Link](#problem-7-reverse-integer)                                |
-| 8         | String to Integer                              | [Link](#problem-8-string-to-integer)                              |
-| 9         | Palindrome Number                              | [Link](#problem-9-palindrome-number)                              |
-| 10        | Regular Expression Matching                    | [Link](#problem-10-regular-expression-matching)                   |
-| 121       | Best Time to Buy and Sell                      | [Link](#problem-121-best-time-to-buy-and-sell-stock)              |
-| 217       | Contains Duplicate                             | [Link](#problem-217-contains-duplicate)                           |
-| 238       | Product of Array Except Self                   | [Link](#problem-217-product-of-array-except-self)                 |
+| Problem # | Problem Name                                   | GoTo                                                              | Language |
+|-----------|------------------------------------------------|-------------------------------------------------------------------|----------|
+| 1         | Two Sum                                        | [Link](#problem-1-two-sum)                                        | C++      |  
+| 2         | Add Two Numbers                                | [Link](#problem-2-add-two-numbers)                                | C++      |
+| 3         | Longest Substring Without Repeating Characters | [Link](#problem-3-longest-substring-without-repeating-characters) | C++      |
+| 4         | Median of Two Sorted Arrays                    | [Link](#problem-4-median-of-two-sorted-arrays)                    | C++      |
+| 5         | Longest Palindromic Substring                  | [Link](#problem-5-longest-palindromic-substring)                  | C++      |
+| 6         | Zigzag Conversion                              | [Link](#problem-6-zigzag-conversion)                              | C++      |
+| 7         | Reverse Integer                                | [Link](#problem-7-reverse-integer)                                | C++      |
+| 8         | String to Integer                              | [Link](#problem-8-string-to-integer)                              | C++      |
+| 9         | Palindrome Number                              | [Link](#problem-9-palindrome-number)                              | C++      |
+| 10        | Regular Expression Matching                    | [Link](#problem-10-regular-expression-matching)                   | C++      |
+| 121       | Best Time to Buy and Sell                      | [Link](#problem-121-best-time-to-buy-and-sell-stock)              | C++      |
+| 217       | Contains Duplicate                             | [Link](#problem-217-contains-duplicate)                           | C++      |
+| 238       | Product of Array Except Self                   | [Link](#problem-217-product-of-array-except-self)                 | C++      |
 ---
 
 ## Problem #1: Two Sum
