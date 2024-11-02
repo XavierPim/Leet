@@ -13,9 +13,10 @@
 | 8         | String to Integer                              | [Link](#problem-8-string-to-integer)                              | C++      |
 | 9         | Palindrome Number                              | [Link](#problem-9-palindrome-number)                              | C++      |
 | 10        | Regular Expression Matching                    | [Link](#problem-10-regular-expression-matching)                   | C++      |
+| 53        | Maximum Subarray                               | [Link](#problem-53-maximum-subarray)                              | Java     |
 | 121       | Best Time to Buy and Sell                      | [Link](#problem-121-best-time-to-buy-and-sell-stock)              | C++      |
 | 217       | Contains Duplicate                             | [Link](#problem-217-contains-duplicate)                           | C++      |
-| 238       | Product of Array Except Self                   | [Link](#problem-217-product-of-array-except-self)                 | C++      |
+| 238       | Product of Array Except Self                   | [Link](#problem-238-product-of-array-except-self)                 | C++      |
 ---
 
 ## Problem #1: Two Sum
@@ -206,6 +207,25 @@ The problem is to determine if a given string matches a pattern that can include
 ### Complexity:
 - **Time complexity**: O(n * m), where n is the length of the string and m is the length of the pattern. Each cell in the DP table is computed based on previous cells, leading to a nested iteration.
 - **Space complexity**: O(n * m) for the DP table. However, this can be optimized to O(m) by only keeping track of the current and previous rows.
+
+[Solution Code](10_RegularExpressionMatching/Solution.cpp)
+
+## Problem #53: Maximum Subarray
+
+### Intuition:
+The goal is to find a contiguous subarray within a given array of integers that has the largest possible sum. A brute-force approach might involve calculating all possible subarray sums, but this would be inefficient for large arrays. Instead, we can use Kadane's Algorithm, which allows us to find the maximum sum in a single pass through the array.
+
+### Approach:
+1. Initialize two variables: compareSum to track the maximum sum of the subarray ending at each index, and maxSum to store the overall maximum sum found.
+2. Iterate through the array:
+- For each element, decide if it's better to start a new subarray with this element alone or to continue adding it to the existing subarray (compareSum).
+- Update compareSum as the maximum of the current element itself or the current element plus compareSum.
+- Update maxSum if compareSum is greater than the previous maxSum.
+3. Return maxSum after the loop finishes. This holds the largest sum of any contiguous subarray in the array.
+
+### Complexity:
+- **Time complexity**: O(n), where n is the length of the array, because we make only one pass through the array.
+- **Space complexity**: O(1), as we only use a few extra variables (compareSum and maxSum) and don’t require any additional data structures.
 
 [Solution Code](10_RegularExpressionMatching/Solution.cpp)
 
