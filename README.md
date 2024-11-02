@@ -104,7 +104,7 @@ The problem asks for the longest palindromic substring in a given string. A brut
 - **Time complexity**: O(n),  where n is the length of the string. For each character, we expand outward to check for palindromes, leading to quadratic time complexity.
 - **Space complexity**: O(1), since we are not using extra space except for variables to track indices and the resulting longest palindrome.
  
-[Solution Code](5_LongestPalindromicSubstring/Solution.cpp)
+[Solution Code](5_LongestPalindromeSubstring/Solution.cpp)
 
 ## Problem #6: Zigzag Conversion
 
