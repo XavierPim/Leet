@@ -1,0 +1,4 @@
+project(150_EvaluateReversePolishNotation)
+
+add_executable(150_EvaluateReversePolishNotation main.cpp Solution.cpp)
+target_include_directories(150_EvaluateReversePolishNotation PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})

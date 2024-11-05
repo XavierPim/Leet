@@ -15,6 +15,7 @@
 | 10        | Regular Expression Matching                    | [Link](#problem-10-regular-expression-matching)                   | C++      |
 | 53        | Maximum Subarray                               | [Link](#problem-53-maximum-subarray)                              | Java     |
 | 121       | Best Time to Buy and Sell                      | [Link](#problem-121-best-time-to-buy-and-sell-stock)              | C++      |
+| 150       | Evaluate Reverse Polish Notation               | [Link](#problem-150-evaluate-reverse-polish-notation)             | C++      |
 | 152       | Maximum Product Subarray                       | [Link](#problem-152-maximum-product-subarray)                     | Java     |
 | 153       | Find Minimum in Rotated Sorted Array           | [Link](#problem-153-find-minimum-in-rotated-sorted-array)         | Java     |
 | 217       | Contains Duplicate                             | [Link](#problem-217-contains-duplicate)                           | C++      |
@@ -249,13 +250,35 @@ Approach:
 - **Space complexity**: O(1), as we only use a few variables to track the smallest price, the maximum profit, and current indices for buy/sell days.
 [Solution Code](217_ContainsDuplicate/Solution.cpp)
 
+## Problem #150: Evaluate Reverse Polish Notation
+
+### Intuition:
+Reverse Polish Notation (RPN) is a mathematical notation in which operators follow their operands. This notation allows expressions to be evaluated from left to right using a stack, as operators can be applied as soon as they appear. By using a stack, we can efficiently manage the operands and apply operations in the correct order without parentheses.
+
+### Approach:
+1. Use a Stack for Operands: As we process each token in the expression:
+- If it’s an operand (a number), push it onto the stack.
+- If it’s an operator (+, -, *, /), pop the top two elements from the stack (the two most recent operands), apply the operator, and push the result back onto the stack.
+2. Operator Handling:
+- Use a helper function to identify if a token is an operator.
+- For each operator, pop two values, perform the calculation, and handle integer division by truncating towards zero.
+3. Final Result:
+- Once all tokens are processed, the final result will be the only element left on the stack.
+4. Edge Cases:
+- Single operand (e.g., ["3"]).
+- Division by zero is not allowed by the problem constraints, so we don’t handle it explicitly.
+- Negative results and truncation towards zero for division.
+### Complexity:
+- **Time complexity**: O(n) where n is the number of tokens. Each token is processed once, and stack operations (push, pop) are O(1).
+- **Space complexity**: O(1), due to the storage of operands on the stack.
+  [Solution Code](150_EvaluateReversePolishNotation/Solution.java)
+
 ## Problem #152: Maximum Product Subarray
 
 ### Intuition:
 The idea is to find the longest(element-wise) contiguous subarray the yields the cumulative largest product 
 
 ### Approach:
-Approach:
 1. We can first declare 3 variables as the first element in the passed in array
 - result for the storing the product if we add the next element 
 - maxProd for storing the cumulative sum of the sub array
@@ -274,7 +297,6 @@ Approach:
 The problem requires finding the minimum element in a sorted array that has been rotated at an unknown pivot. Since the array is sorted but rotated, the smallest element can be found inO(logn) time complexity by applying binary search principles.
 
 ### Approach:
-Approach:
 Binary Search:
 1. We use a binary search approach to achieve O(logn) time complexity.
 2. Initialize Pointers:
@@ -303,16 +325,14 @@ Binary Search:
 The problem is to determine if a given integer array contains any duplicates. This means we need to check if any integer appears more than once in the array. A simple way to think about this is to keep track of the integers we encounter as we iterate through the array and see if we've seen any of them before.
 
 ### Approach:
-Intuition:
-The goal of this problem is to determine if there are any duplicate elements in the given vector of integers. Since the presence of duplicates can significantly affect the performance of algorithms, it is crucial to check for them efficiently.
 
-Approach:
 1. Utilize an Unordered Set: We can use an unordered set to track elements as we iterate through the vector.
 2. Iterate Through the Vector: For each element in the vector:
 - Check if it already exists in the set.
 - If it does, return true indicating a duplicate has been found.
 - If it doesn't, insert it into the set.
 3. Return False: If the iteration completes without finding duplicates, return false
+
 ### Complexity:
 - **Time complexity**: O(n) This approach runs in O(n) time complexity, where n is the number of elements in the vector, as it requires a single pass through the vector and utilizes O(n) space for the set.
 - **Space complexity**: O(1) as it exits out right after first detection
