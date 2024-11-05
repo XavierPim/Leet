@@ -15,6 +15,8 @@
 | 10        | Regular Expression Matching                    | [Link](#problem-10-regular-expression-matching)                   | C++      |
 | 53        | Maximum Subarray                               | [Link](#problem-53-maximum-subarray)                              | Java     |
 | 121       | Best Time to Buy and Sell                      | [Link](#problem-121-best-time-to-buy-and-sell-stock)              | C++      |
+| 152       | Maximum Product Subarray                       | [Link](#problem-152-maximum-product-subarray)                     | Java     |
+| 153       | Find Minimum in Rotated Sorted Array           | [Link](#problem-153-find-minimum-in-rotated-sorted-array)         | Java     |
 | 217       | Contains Duplicate                             | [Link](#problem-217-contains-duplicate)                           | C++      |
 | 238       | Product of Array Except Self                   | [Link](#problem-238-product-of-array-except-self)                 | C++      |
 ---
@@ -246,6 +248,54 @@ Approach:
 - **Time complexity**: O(n) where n is the number of prices. We traverse the list once.
 - **Space complexity**: O(1), as we only use a few variables to track the smallest price, the maximum profit, and current indices for buy/sell days.
 [Solution Code](217_ContainsDuplicate/Solution.cpp)
+
+## Problem #152: Maximum Product Subarray
+
+### Intuition:
+The idea is to find the longest(element-wise) contiguous subarray the yields the cumulative largest product 
+
+### Approach:
+Approach:
+1. We can first declare 3 variables as the first element in the passed in array
+- result for the storing the product if we add the next element 
+- maxProd for storing the cumulative sum of the sub array
+- minProd for storing the smallest product 
+2. maxProd calls Math.max() to compare if adding next element results in a higher product subarray
+3. minProd calls Math.max() again to compare a temporary maxProd and actual maxPod to see which product is higher
+4. result calls Math.max() to see if maxProd or previous result is a higher product
+### Complexity:
+- **Time complexity**: O(n) where n is the number of elements traversed once
+- **Space complexity**: O(1), as there is only 2 variables getting reassigned
+  [Solution Code](jav152MaximumProductSubarray/Solution.java)
+
+## Problem #153: Find Minimum in Rotated Sorted Array
+
+### Intuition:
+The problem requires finding the minimum element in a sorted array that has been rotated at an unknown pivot. Since the array is sorted but rotated, the smallest element can be found inO(logn) time complexity by applying binary search principles.
+
+### Approach:
+Approach:
+Binary Search:
+1. We use a binary search approach to achieve O(logn) time complexity.
+2. Initialize Pointers:
+- left is set to the first element (start of the array).
+- right is set to the last element (end of the array).
+3. Base Case:
+- If the array is already sorted (nums[left] < nums[right]), then nums[left] is the minimum.
+- If left is equal to right, then we have narrowed down to the minimum element.
+4. Binary Search Process:
+- Calculate mid as the midpoint between left and right.
+- Comparisons:
+- - If nums[mid] > nums[right], this means the smallest element must be in the right half (because rotation implies the smallest element is beyond mid). Set left to mid + 1.
+- - Otherwise, if nums[mid] <= nums[right], the minimum is in the left half, so set right to mid.
+- Repeat the process recursively (or iteratively) until the base case is met.
+5. Result:
+- When left meets right, nums[left] (or nums[right]) will be the minimum element.
+
+### Complexity:
+- **Time complexity**: O(n) 
+- **Space complexity**: O(1), 
+  [Solution Code](jav153FindMinimumInRotatedSortedArray/Solution.java)
 
 ## Problem #217: Contains Duplicate
 
