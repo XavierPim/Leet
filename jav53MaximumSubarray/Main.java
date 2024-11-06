@@ -1,4 +1,4 @@
-package jav53maximumsubarray;
+package jav53MaximumSubarray;
 
 public class Main {
     public static void main(String[] args) {

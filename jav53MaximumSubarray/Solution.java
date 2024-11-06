@@ -1,4 +1,4 @@
-package jav53maximumsubarray;
+package jav53MaximumSubarray;
 
 public class Solution {
     public int maxSubArray(int[] nums) {
