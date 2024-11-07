@@ -13,6 +13,7 @@
 | 8         | String to Integer                              | [Link](#problem-8-string-to-integer)                              | C++      |
 | 9         | Palindrome Number                              | [Link](#problem-9-palindrome-number)                              | C++      |
 | 10        | Regular Expression Matching                    | [Link](#problem-10-regular-expression-matching)                   | C++      |
+| 33        | Search in Rotated Sorted Array                 | [Link](#problem-33-search-in-rotated-sorted-array)                | Java     |
 | 53        | Maximum Subarray                               | [Link](#problem-53-maximum-subarray)                              | Java     |
 | 121       | Best Time to Buy and Sell                      | [Link](#problem-121-best-time-to-buy-and-sell-stock)              | C++      |
 | 150       | Evaluate Reverse Polish Notation               | [Link](#problem-150-evaluate-reverse-polish-notation)             | C++      |
@@ -213,6 +214,36 @@ The problem is to determine if a given string matches a pattern that can include
 
 [Solution Code](10_RegularExpressionMatching/Solution.cpp)
 
+## Problem #33: Search In Rotated Sorted Array
+
+### Intuition:
+In a rotated sorted array, the array is initially sorted in ascending order but then "rotated" at some unknown pivot. This means one half of the array remains sorted, while the other half is rotated. By leveraging this property, we can use a modified binary search to find the target in O(logn) time.
+
+### Approach:
+1. Binary Search with Adjustments:
+- Initialize pointers left and right to represent the search range.
+- Calculate the midpoint mid at each step and check if it matches the target.
+2. Determine Which Half is Sorted:
+- If nums[left] <= nums[mid], the left side is sorted.
+- Check if the target lies within nums[left] and nums[mid].
+- - If it does, continue searching in the left half.
+- - Otherwise, search the right half.
+- If nums[mid] <= nums[right], the right side is sorted.
+- - Check if the target lies within nums[mid] and nums[right].
+- - - If it does, continue searching in the right half.
+- - - Otherwise, search the left half.
+3. Recursive Search:
+- Continue the search by narrowing down the range until the base case is met.
+- Base cases:
+- - If left > right, the target is not present, so return -1.
+- - If nums[mid] == target, return mid.
+
+### Complexity:
+- **Time complexity**: O(logn), as the array is halved in each recursive call.
+- **Space complexity**: O(logn) due to the recursive stack, but can be reduced to O(1) if implemented iteratively.
+
+[Solution Code](jav33SearchInRotatedSortedArray/Solution.java)
+
 ## Problem #53: Maximum Subarray
 
 ### Intuition:
@@ -230,7 +261,7 @@ The goal is to find a contiguous subarray within a given array of integers that 
 - **Time complexity**: O(n), where n is the length of the array, because we make only one pass through the array.
 - **Space complexity**: O(1), as we only use a few extra variables (compareSum and maxSum) and don’t require any additional data structures.
 
-[Solution Code](jav53MaximumSubarray/Solution.cpp)
+[Solution Code](jav53MaximumSubarray/Solution.java)
 
 ## Problem #121: Best Time to Buy and Sell Stock
 
@@ -271,7 +302,7 @@ Reverse Polish Notation (RPN) is a mathematical notation in which operators foll
 ### Complexity:
 - **Time complexity**: O(n) where n is the number of tokens. Each token is processed once, and stack operations (push, pop) are O(1).
 - **Space complexity**: O(1), due to the storage of operands on the stack.
-  [Solution Code](150_EvaluateReversePolishNotation/Solution.java)
+  [Solution Code](150_EvaluateReversePolishNotation/Solution.cpp)
 
 ## Problem #152: Maximum Product Subarray
 
