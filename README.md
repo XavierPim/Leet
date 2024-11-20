@@ -13,6 +13,7 @@
 | 8         | String to Integer                              | [Link](#problem-8-string-to-integer)                              | C++      |
 | 9         | Palindrome Number                              | [Link](#problem-9-palindrome-number)                              | C++      |
 | 10        | Regular Expression Matching                    | [Link](#problem-10-regular-expression-matching)                   | C++      |
+| 15        | 3Sum                                           | [Link](#problem-15-3Sum)                                          | Java     |
 | 33        | Search in Rotated Sorted Array                 | [Link](#problem-33-search-in-rotated-sorted-array)                | Java     |
 | 53        | Maximum Subarray                               | [Link](#problem-53-maximum-subarray)                              | Java     |
 | 121       | Best Time to Buy and Sell                      | [Link](#problem-121-best-time-to-buy-and-sell-stock)              | C++      |
@@ -213,6 +214,38 @@ The problem is to determine if a given string matches a pattern that can include
 - **Space complexity**: O(n * m) for the DP table. However, this can be optimized to O(m) by only keeping track of the current and previous rows.
 
 [Solution Code](10_RegularExpressionMatching/Solution.cpp)
+
+## Problem #15: 3Sum
+
+### Intuition:
+The 3Sum problem requires finding all unique triplets in an array that sum up to zero. Sorting the array simplifies this process, as it allows efficient traversal using a fixed pivot and the two-pointer technique. In this implementation, we used QuickSort to sort the array in O(nlogn), which complements the subsequent two-pointer approach.
+
+### Approach:
+1. Sort the Array with QuickSort:
+- Sorting the array using QuickSort ensures efficient traversal and helps in skipping duplicates.
+2. Iterate with a Pivot:
+- Fix one element (the pivot) in the triplet using a loop.
+- Skip duplicate values for the pivot to avoid duplicate triplets.
+3. Two-Pointer Search:
+- Use two pointers (left and right) to find two additional elements that, when added to the pivot, sum to zero.
+- Adjust the pointers based on the sum:
+- - If the sum is zero, add the triplet to the result and move both pointers inward.
+- - If the sum is less than zero, increment the left pointer to increase the sum.
+- - If the sum is greater than zero, decrement the right pointer to decrease the sum.
+- Skip duplicate values for both left and right to ensure unique triplets.
+4. Handle Edge Cases:
+- If the input array has fewer than three elements, return an empty list.
+- Ensure proper handling of duplicate triplets by skipping repeated values.
+5. Return the Result:
+- After processing all potential pivots, return the list of triplets.
+### Complexity:
+- **Time complexity**: 
+- - Sorting the array using QuickSort takes
+- - The two-pointer search is O(n^2) in total, as it runs once for each element.
+- - Overall complexity:O(n^2).
+- **Space complexity**:O(k) Sorting with QuickSort is in-place, so no additional memory is required for the array.
+
+[Solution Code](jav15ThreeSum/Solution.java)
 
 ## Problem #33: Search In Rotated Sorted Array
 
