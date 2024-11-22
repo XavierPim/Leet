@@ -13,6 +13,7 @@
 | 8         | String to Integer                              | [Link](#problem-8-string-to-integer)                              | C++      |
 | 9         | Palindrome Number                              | [Link](#problem-9-palindrome-number)                              | C++      |
 | 10        | Regular Expression Matching                    | [Link](#problem-10-regular-expression-matching)                   | C++      |
+| 11        | Container with Most Water                      | [Link](#problem-11-container-with-most-water)                     | Java     |
 | 15        | 3Sum                                           | [Link](#problem-15-3Sum)                                          | Java     |
 | 33        | Search in Rotated Sorted Array                 | [Link](#problem-33-search-in-rotated-sorted-array)                | Java     |
 | 53        | Maximum Subarray                               | [Link](#problem-53-maximum-subarray)                              | Java     |
@@ -22,6 +23,7 @@
 | 153       | Find Minimum in Rotated Sorted Array           | [Link](#problem-153-find-minimum-in-rotated-sorted-array)         | Java     |
 | 217       | Contains Duplicate                             | [Link](#problem-217-contains-duplicate)                           | C++      |
 | 238       | Product of Array Except Self                   | [Link](#problem-238-product-of-array-except-self)                 | C++      |
+| 371       | Sum of Two Integers                            | [Link](#problem-371-sum-of-two-integers)                          | Java     |
 ---
 
 ## Problem #1: Two Sum
@@ -214,6 +216,34 @@ The problem is to determine if a given string matches a pattern that can include
 - **Space complexity**: O(n * m) for the DP table. However, this can be optimized to O(m) by only keeping track of the current and previous rows.
 
 [Solution Code](10_RegularExpressionMatching/Solution.cpp)
+
+## Problem #11: Container With Most Water
+
+### Intuition:
+The problem involves finding two vertical lines from an array of heights that, along with the x-axis, form a container that can hold the maximum amount of water. The area of water that can be held by two lines depends on:
+
+- The height of the shorter line (because water can't exceed this height).
+- The distance between the two lines (breadth).
+The goal is to maximize:
+
+Area = min(height[left], height[right]) × (right−left)
+The two-pointer approach is ideal here because it efficiently narrows down the search for the maximum area.
+### Approach:
+1. Two Pointers:
+- Place one pointer (left) at the beginning of the array and the other (right) at the end.
+- Calculate the area using the formula:
+- - Area=min(height[left], height[right])×(right−left)
+- Update maxArea if the current area is larger.
+2. Move the Shorter Line:
+- Move the pointer pointing to the shorter line inward (left++ or right--) to potentially find a taller line that could increase the area.
+- Repeat until the two pointers meet.
+3. Edge Cases:
+- Minimum input size (height.length == 2).
+- Arrays with all equal heights.
+### Complexity:
+- **Time complexity**: O(n) Each pointer is processed at most once.
+- **Space complexity**: O(1) No additional data structures are used.
+[Solution Code](jav11ContainerWithMostWater/Solution.java)
 
 ## Problem #15: 3Sum
 
@@ -428,3 +458,30 @@ Initialize Variables:
 - **Space complexity**: O(1) (excluding output array), as we use a few extra variables (totalProduct, hasZeroCount) and the result array answer is returned.
   [Solution Code](238_ProductOfArrayExceptSelf/Solution.cpp)
 
+## Problem #371: Sum Of Two Integers
+
+### Intuition:
+The task requires summing two binary strings and returning the result as a binary string. Binary addition rules mirror decimal addition but use only two digits (0 and 1). The primary challenge lies in handling carry propagation effectively.
+Instead of directly using the + operator, bitwise operations can emulate addition by:
+
+- Using XOR for adding bits without carry.
+- Using AND to calculate the carry.
+- Shifting the carry left to add it to the next higher bit position.
+
+### Approach:
+1. Convert Binary Strings to Integers:
+- Parse the binary strings into integers using Integer.parseInt with a base of 2.
+2. Add Integers Without + Using getSum:
+- XOR (^): Adds bits without handling carry.
+- AND (&) and <<: Identifies and shifts the carry.
+- Repeat until the carry is zero.
+3. Convert Result Back to Binary:
+- Use Integer.toBinaryString to convert the result from integer to binary string.
+4. Edge Cases:
+- Empty strings or null inputs.
+- Unequal string lengths (implicitly handled by conversion to integers).
+
+### Complexity:
+- **Time complexity**: O(n), where n is the number of bits in the larger number.
+- **Space complexity**: O(1), as no additional data structures are used.
+  [Solution Code](jav371SumOfTwoIntegers/Solution.java)
