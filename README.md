@@ -21,6 +21,7 @@
 | 150       | Evaluate Reverse Polish Notation               | [Link](#problem-150-evaluate-reverse-polish-notation)             | C++      |
 | 152       | Maximum Product Subarray                       | [Link](#problem-152-maximum-product-subarray)                     | Java     |
 | 153       | Find Minimum in Rotated Sorted Array           | [Link](#problem-153-find-minimum-in-rotated-sorted-array)         | Java     |
+| 191       | Number of 1 Bits                               | [Link](#problem-191-number-of-1-bits)                             | Java     |
 | 217       | Contains Duplicate                             | [Link](#problem-217-contains-duplicate)                           | C++      |
 | 238       | Product of Array Except Self                   | [Link](#problem-238-product-of-array-except-self)                 | C++      |
 | 371       | Sum of Two Integers                            | [Link](#problem-371-sum-of-two-integers)                          | Java     |
@@ -412,6 +413,24 @@ Binary Search:
 - **Time complexity**: O(n) 
 - **Space complexity**: O(1), 
   [Solution Code](jav153FindMinimumInRotatedSortedArray/Solution.java)
+
+## Problem #191: Number of 1 Bits
+
+### Intuition:
+The problem requires that we find the number of 1 Bits in a given integer
+
+### Approach:
+1. We take integer n and initialize a count to 0
+2. Then iterate over a max of 32 Bits 
+- First we shift the bits right by i to check in each place value
+- We then use & to extract the value of the LSB
+- - This means if we & 2 bits it will yield 1 if both are a 1 Bit
+3. We increment count by 1 if the LSB is 1
+
+### Complexity:
+- **Time complexity**: O(1) since it's only going up to 32 digits/bits
+- **Space complexity**: O(1) since it only uses a max of 32 digits/bits
+  [Solution Code](jav191NumberOf1Bits/Solution.java)
 
 ## Problem #217: Contains Duplicate
 
