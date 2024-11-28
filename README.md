@@ -487,7 +487,7 @@ The problem requires calculating the number of 1 Bits up to the value of n.(incl
 1. Initialize Variables:
 - int result array with 0's as the elements
 2. Begin iterating where we start at result[1] because if we count to n at result[0] is always zero 1 bits.
-3. Now we begin reassigment in each step for result[i] where i starts at 1;
+3. Now we begin reassignment in each step for result[i] where i starts at 1;
 - the equation is result[i>>1] + (i&1);
 - - broken down result[i>>1] essentially checks the previous result number of ones. kind of like recursive but iterative
 - - add (i & 1) - where this checks if the LSB is a 1 or 0;
