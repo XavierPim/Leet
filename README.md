@@ -18,6 +18,7 @@
 | 15        | 3Sum                                           | [Link](#problem-15-3Sum)                                          | Java     |
 | 33        | Search in Rotated Sorted Array                 | [Link](#problem-33-search-in-rotated-sorted-array)                | Java     |
 | 53        | Maximum Subarray                               | [Link](#problem-53-maximum-subarray)                              | Java     |
+| 76        | Minimum Window Substring                       | [Link](#problem-76-minimum-window-substring)                      | Java     |
 | 121       | Best Time to Buy and Sell                      | [Link](#problem-121-best-time-to-buy-and-sell-stock)              | C++      |
 | 150       | Evaluate Reverse Polish Notation               | [Link](#problem-150-evaluate-reverse-polish-notation)             | C++      |
 | 152       | Maximum Product Subarray                       | [Link](#problem-152-maximum-product-subarray)                     | Java     |
@@ -506,6 +507,51 @@ array.
   additional data structures.
 
 [Solution Code](jav53MaximumSubarray/Solution.java)
+
+## Problem #76: Minimum Window Substring
+
+### Intuition:
+The task is to find the smallest substring in `s` that contains all the characters of string `t` (including duplicates). This is a classic **sliding window** problem where we dynamically adjust the window size to meet the requirements of the problem.
+
+1. **Character Frequency Map**:
+    - First, build a frequency map (`t_map`) of all characters in `t` to know how many of each character is required.
+
+2. **Sliding Window**:
+    - Use two pointers (`left` and `right`) to define a window in `s` that can dynamically expand and shrink.
+    - Track the counts of characters in the current window using a `window_map`.
+    - When the window contains all required characters in `t` (i.e., matches the counts in `t_map`), shrink the window from the left to find the smallest valid substring.
+
+3. **Result Tracking**:
+    - Keep track of the minimum-length window and its start position whenever the window meets the conditions.
+
+---
+
+### Approach:
+1. **Initialize Maps**:
+    - Create a `t_map` for character frequencies in `t`.
+    - Use `window_map` to track the character counts in the current sliding window.
+
+2. **Expand the Window**:
+    - Iterate through `s` with the `right` pointer, adding characters to `window_map`.
+
+3. **Check Validity**:
+    - When the current window satisfies all character requirements (tracked using a `formed` counter), attempt to shrink the window from the left.
+
+4. **Shrink the Window**:
+    - Move the `left` pointer to minimize the window size while ensuring all character requirements remain satisfied.
+
+5. **Track the Result**:
+    - Update the minimum-length substring and its start index whenever a valid window is found.
+
+6. **Return Result**:
+    - Return the smallest valid substring or an empty string if no valid substring exists.
+   
+### Complexity:
+- **Time Complexity**: \( O(m + n) \), where \( m \) is the length of `s` and \( n \) is the length of `t`.
+- **Space Complexity**: \( O(k) \), where \( k \) is the number of unique characters in `t`.
+
+
+[Solution Code](jav76MinimumWindowSubstring/Solution.java)
 
 ## Problem #121: Best Time to Buy and Sell Stock
 
