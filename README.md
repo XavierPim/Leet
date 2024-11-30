@@ -669,7 +669,7 @@ The task is to reverse the bits of a 32-bit unsigned integer. The least signific
     - The number of bits is fixed at 32, so the operations take constant time.
 - **Space Complexity**: \( O(1) \)
     - No additional data structures are used.
-
+      [Solution Code](jav190ReverseBits/Solution.java)
 
 ##  Problem #191: Number of 1 Bits
 
