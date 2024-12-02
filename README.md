@@ -27,6 +27,7 @@
 | 191       | Number of 1 Bits                               | [Link](#problem-191-number-of-1-bits)                             | Java     |
 | 217       | Contains Duplicate                             | [Link](#problem-217-contains-duplicate)                           | C++      |
 | 238       | Product of Array Except Self                   | [Link](#problem-238-product-of-array-except-self)                 | C++      |
+| 242       | Valid Anagram                                  | [Link](#problem-242-valid-anagram)                                | Java     |
 | 268       | Missing Number                                 | [Link](#problem-268-missing-number)                               | Java     |
 | 338       | Counting Bits                                  | [Link](#problem-338-counting-bits)                                | Java     |
 | 371       | Sum of Two Integers                            | [Link](#problem-371-sum-of-two-integers)                          | Java     |
@@ -809,6 +810,34 @@ Initialize Variables:
 - **Space complexity**: O(1) (excluding output array), as we use a few extra variables (totalProduct, hasZeroCount) and
   the result array answer is returned.
   [Solution Code](238_ProductOfArrayExceptSelf/Solution.cpp)
+
+## Problem #242: Valid Anagram
+
+### Intuition:
+The task is to determine if two strings `s` and `t` are anagrams of each other. Two strings are anagrams if they contain the same characters with the same frequencies. Unlike traditional approaches that handle only ASCII lowercase letters, this solution is robust and works for **Unicode characters** as well, making it suitable for a wide range of inputs, including multilingual text.
+
+### Approach:
+1. **Check String Lengths**:
+    - If the lengths of `s` and `t` differ, they cannot be anagrams.
+
+2. **Character Frequency Map**:
+    - Use a `HashMap` to count the frequencies of characters in `s` using their Unicode values as keys.
+    - Increment the count for each character in `s`.
+
+3. **Validate Against `t`**:
+    - For each character in `t`, check if it exists in the frequency map:
+        - If it does, decrement its count.
+        - If the count becomes `0`, remove the character from the map.
+        - If the character is not found, return `false`.
+
+4. **Final Check**:
+    - After processing both strings, the `HashMap` should be empty if `s` and `t` are valid anagrams.
+
+### Complexity:
+- **Time Complexity**: \( O(n) \), where \( n \) is the length of the strings. Each character in `s` and `t` is processed once.
+- **Space Complexity**: \( O(k) \), where \( k \) is the number of unique characters in the input strings. This depends on the diversity of characters (e.g., ASCII vs Unicode).
+
+  [Solution Code](jav242ValidAnagram/Solution.java)
 
 ## Problem #268: Missing Number
 
