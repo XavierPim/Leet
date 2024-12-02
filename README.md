@@ -811,7 +811,7 @@ Initialize Variables:
   the result array answer is returned.
   [Solution Code](238_ProductOfArrayExceptSelf/Solution.cpp)
 
-## Problem #242: Valid Anagram
+## Problem #242: Valid Anagram - VALID UNICODE EDGE CASE 
 
 ### Intuition:
 The task is to determine if two strings `s` and `t` are anagrams of each other. Two strings are anagrams if they contain the same characters with the same frequencies. Unlike traditional approaches that handle only ASCII lowercase letters, this solution is robust and works for **Unicode characters** as well, making it suitable for a wide range of inputs, including multilingual text.
