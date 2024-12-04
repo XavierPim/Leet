@@ -17,6 +17,7 @@
 | 11        | Container with Most Water                      | [Link](#problem-11-container-with-most-water)                     | Java     |
 | 15        | 3Sum                                           | [Link](#problem-15-3Sum)                                          | Java     |
 | 33        | Search in Rotated Sorted Array                 | [Link](#problem-33-search-in-rotated-sorted-array)                | Java     |
+| 49        | Group Anagrams                                 | [Link](#problem-49-group-anagrams)                                | Java     |
 | 53        | Maximum Subarray                               | [Link](#problem-53-maximum-subarray)                              | Java     |
 | 76        | Minimum Window Substring                       | [Link](#problem-76-minimum-window-substring)                      | Java     |
 | 121       | Best Time to Buy and Sell                      | [Link](#problem-121-best-time-to-buy-and-sell-stock)              | C++      |
@@ -478,6 +479,49 @@ use a modified binary search to find the target in O(logn) time.
 - **Space complexity**: O(logn) due to the recursive stack, but can be reduced to O(1) if implemented iteratively.
 
 [Solution Code](jav33SearchInRotatedSortedArray/Solution.java)
+
+## Problem #49: Group Anagrams
+
+### Intuition:
+The goal is to group strings that are anagrams of each other. An anagram is a word formed by rearranging the letters of another, such as "eat" and "tea". The challenge includes handling edge cases like empty strings (`""`) and ensuring that all anagrams are grouped correctly.
+
+1. **Anagram Detection**:
+    - Two strings are anagrams if their sorted character arrays are identical.
+
+2. **Grouping Logic**:
+    - Use a temporary list (`tempList`) to collect anagrams of a string.
+    - Process each string only once and dynamically group anagrams together.
+
+3. **Edge Case: Empty Strings**:
+    - Group all empty strings (`""`) together at the start to simplify the main logic.
+
+---
+
+### Approach:
+1. **Collect Empty Strings**:
+    - Separate empty strings into their own group and remove them from the main list.
+
+2. **Group Non-Empty Strings**:
+    - Iterate through the remaining strings and group anagrams together:
+        - Pick a string as the base (`currStr`).
+        - Compare it with all remaining strings to find its anagrams.
+        - Remove matched anagrams from the list to avoid reprocessing.
+
+3. **Helper Function for Anagram Detection**:
+    - Sort the characters of two strings and check if they are identical.
+
+4. **Add Groups to the Result**:
+    - After processing a group, add it to the result list and clear temporary variables.
+
+---
+
+### Complexity:
+- **Time Complexity**:
+    - Collecting empty strings: \( O(n) \), where \( n \) is the number of strings.
+    - Outer loop: \( O(n) \), iterating through all strings.
+    - Inner loop: \( O(n^2) \), comparing each string with the rest.
+
+[Solution Code](jav49GroupAnagrams/Solution.java)
 
 ## Problem #53: Maximum Subarray
 
