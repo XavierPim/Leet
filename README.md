@@ -16,6 +16,7 @@
 | 10        | Regular Expression Matching                    | [Link](#problem-10-regular-expression-matching)                   | C++      |
 | 11        | Container with Most Water                      | [Link](#problem-11-container-with-most-water)                     | Java     |
 | 15        | 3Sum                                           | [Link](#problem-15-3Sum)                                          | Java     |
+| 20        | Valid Parentheses                              | [Link](#problem-20-valid-parentheses)                             | Java     |
 | 33        | Search in Rotated Sorted Array                 | [Link](#problem-33-search-in-rotated-sorted-array)                | Java     |
 | 49        | Group Anagrams                                 | [Link](#problem-49-group-anagrams)                                | Java     |
 | 53        | Maximum Subarray                               | [Link](#problem-53-maximum-subarray)                              | Java     |
@@ -431,6 +432,43 @@ used QuickSort to sort the array in O(nlogn), which complements the subsequent t
 
 [Solution Code](jav15ThreeSum/Solution.java)
 
+## Problem #20: Valid Parentheses
+
+### Intuition:
+The problem involves checking if a given string of parentheses is valid. A string is valid if:
+1. Every opening parenthesis has a corresponding closing parenthesis.
+2. Parentheses are closed in the correct order.
+
+To solve this efficiently, we can use a **stack** data structure to match opening and closing parentheses as we traverse the string.
+
+---
+
+### Approach:
+1. **Use a Stack**:
+    - Push every opening parenthesis (`{`, `[`, `(`) onto the stack.
+    - When encountering a closing parenthesis (`}`, `]`, `)`):
+        - Check if the stack is non-empty and the top of the stack matches the current closing parenthesis.
+        - If the stack is empty or the top does not match, the string is invalid.
+
+2. **Matching Logic**:
+    - Use pairs to ensure that:
+        - `{` matches with `}`.
+        - `[` matches with `]`.
+        - `(` matches with `)`.
+
+3. **Final Check**:
+    - After traversing the string, the stack should be empty. If not, it means there are unmatched opening parentheses.
+
+---
+
+### Complexity:
+- **Time Complexity**: \( O(n) \)
+    - Each character in the string is processed once.
+- **Space Complexity**: \( O(n) \)
+    - The stack stores unmatched opening parentheses, which can be at most \( n/2 \) for a valid string.
+
+[Solution Code](jav20ValidParentheses/Solution.java)
+
 ## Problem #33: Search In Rotated Sorted Array
 
 ### Intuition:
@@ -495,7 +533,6 @@ The goal is to group strings that are anagrams of each other. An anagram is a wo
 3. **Edge Case: Empty Strings**:
     - Group all empty strings (`""`) together at the start to simplify the main logic.
 
----
 
 ### Approach:
 1. **Collect Empty Strings**:
@@ -512,8 +549,6 @@ The goal is to group strings that are anagrams of each other. An anagram is a wo
 
 4. **Add Groups to the Result**:
     - After processing a group, add it to the result list and clear temporary variables.
-
----
 
 ### Complexity:
 - **Time Complexity**:
