@@ -22,6 +22,7 @@
 | 53        | Maximum Subarray                               | [Link](#problem-53-maximum-subarray)                              | Java     |
 | 76        | Minimum Window Substring                       | [Link](#problem-76-minimum-window-substring)                      | Java     |
 | 121       | Best Time to Buy and Sell                      | [Link](#problem-121-best-time-to-buy-and-sell-stock)              | C++      |
+| 141       | Link List Cycle                                | [Link](#problem-141-linked-list-cycle)                            | Java     |
 | 150       | Evaluate Reverse Polish Notation               | [Link](#problem-150-evaluate-reverse-polish-notation)             | C++      |
 | 152       | Maximum Product Subarray                       | [Link](#problem-152-maximum-product-subarray)                     | Java     |
 | 153       | Find Minimum in Rotated Sorted Array           | [Link](#problem-153-find-minimum-in-rotated-sorted-array)         | Java     |
@@ -665,6 +666,43 @@ Approach:
 - **Space complexity**: O(1), as we only use a few variables to track the smallest price, the maximum profit, and
   current indices for buy/sell days.
   [Solution Code](217_ContainsDuplicate/Solution.cpp)
+
+## Problem #141: Linked List Cycle
+
+### Intuition:
+
+The goal of this problem is to determine whether a given singly linked list contains a cycle. A cycle occurs when a node’s `next` pointer points to a previously visited node. Instead of tracking visited nodes explicitly, we can use **Floyd’s Cycle Detection Algorithm** (also known as the Tortoise and Hare algorithm).
+
+This algorithm uses two pointers moving at different speeds (slow and fast). If there is a cycle, the two pointers will eventually meet inside the cycle. If there is no cycle, the fast pointer will reach the end of the list (`null`).
+
+
+### Approach:
+
+1. **Initialize Two Pointers**:
+    - Start both `slow` and `fast` pointers at the head of the linked list.
+
+2. **Traverse the List**:
+    - Move the `slow` pointer one step at a time.
+    - Move the `fast` pointer two steps at a time.
+
+3. **Check for a Cycle**:
+    - If the `fast` pointer reaches `null` (or `fast.next` is `null`), the list has no cycle.
+    - If the `slow` pointer and the `fast` pointer meet at some point, there is a cycle.
+
+4. **Return the Result**:
+    - Return `true` if a cycle is detected (pointers meet).
+    - Return `false` if the traversal ends (`fast` reaches `null`).
+
+
+### Complexity:
+
+- **Time Complexity**: \( O(n) \)
+    - The `slow` and `fast` pointers traverse the list at most once. In a cycle, the pointers may loop a few times before meeting, but this still results in a linear runtime.
+
+- **Space Complexity**: \( O(1) \)
+    - The algorithm uses only two pointers (`slow` and `fast`), making it space-efficient.
+
+[Solution Code](jav141LinkedListCycle/Solution.java)
 
 ## Problem #150: Evaluate Reverse Polish Notation
 
