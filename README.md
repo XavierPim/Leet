@@ -27,6 +27,7 @@
 | 153       | Find Minimum in Rotated Sorted Array           | [Link](#problem-153-find-minimum-in-rotated-sorted-array)         | Java     |
 | 190       | Reverse Bits                                   | [Link](#problem-190-reverse-bits)                                 | Java     |
 | 191       | Number of 1 Bits                               | [Link](#problem-191-number-of-1-bits)                             | Java     |
+| 206       | Reverse a Linked List                          | [Link](#problem-206-reverse-linked-list)                          | C++      |
 | 217       | Contains Duplicate                             | [Link](#problem-217-contains-duplicate)                           | C++      |
 | 238       | Product of Array Except Self                   | [Link](#problem-238-product-of-array-except-self)                 | C++      |
 | 242       | Valid Anagram                                  | [Link](#problem-242-valid-anagram)                                | Java     |
@@ -820,6 +821,41 @@ The problem requires that we find the number of 1 Bits in a given integer
 - **Time complexity**: O(1) since it's only going up to 32 digits/bits
 - **Space complexity**: O(1) since it only uses a max of 32 digits/bits
   [Solution Code](jav191NumberOf1Bits/Solution.java)
+
+## Problem #206: Reverse Linked List
+
+### Intuition:
+
+The goal of this problem is to reverse a singly linked list. Instead of creating a new list or using extra memory for storing nodes, we aim to reverse the list **in place** by modifying the `next` pointers of the nodes. The process involves iterating through the list while keeping track of the previous and current nodes.
+
+This approach ensures that the linked list is reversed with minimal memory overhead and linear time complexity.
+
+
+### Approach:
+
+1. **Initialize Pointers**:
+    - Start with two pointers:
+        - `prev` initialized to `nullptr` to represent the end of the reversed list.
+        - `current` initialized to the head of the original list.
+
+2. **Iterate Through the List**:
+    - While the `current` pointer is not `nullptr`:
+        - Store the next node of the current node in a temporary pointer (`nextNode`).
+        - Reverse the link by pointing `current->next` to `prev`.
+        - Move `prev` to the `current` node (i.e., advance the reversed list).
+        - Move `current` to `nextNode` (i.e., advance the original list).
+
+3. **Return the New Head**:
+    - At the end of the loop, `prev` will point to the new head of the reversed linked list.
+
+### Complexity:
+
+- **Time complexity**: \( O(n) \)
+    - The list is traversed once, processing each node in linear time.
+- **Space complexity**: \( O(1) \)
+    - The reversal is done in place, using only a few additional pointers.
+
+  [Solution Code](206_ReverseLinkedList/Solution.cpp)
 
 ## Problem #217: Contains Duplicate
 
