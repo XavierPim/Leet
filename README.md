@@ -17,6 +17,7 @@
 | 11        | Container with Most Water                      | [Link](#problem-11-container-with-most-water)                     | Java     |
 | 15        | 3Sum                                           | [Link](#problem-15-3Sum)                                          | Java     |
 | 20        | Valid Parentheses                              | [Link](#problem-20-valid-parentheses)                             | Java     |
+| 21        | Merge Two Sorted Lists                         | [Link](#problem-21-merge-two-sorted-lists)                        | C++      |
 | 33        | Search in Rotated Sorted Array                 | [Link](#problem-33-search-in-rotated-sorted-array)                | Java     |
 | 49        | Group Anagrams                                 | [Link](#problem-49-group-anagrams)                                | Java     |
 | 53        | Maximum Subarray                               | [Link](#problem-53-maximum-subarray)                              | Java     |
@@ -470,6 +471,43 @@ To solve this efficiently, we can use a **stack** data structure to match openin
     - The stack stores unmatched opening parentheses, which can be at most \( n/2 \) for a valid string.
 
 [Solution Code](jav20ValidParentheses/Solution.java)
+
+## Problem #21: Merge Two Sorted Lists
+
+### Intuition:
+
+The goal of this problem is to merge two sorted linked lists into a single sorted linked list. By leveraging the fact that both input lists are already sorted, we can achieve this efficiently without requiring additional sorting operations.
+
+The key is to iterate through both lists, comparing their elements, and appending the smaller element to the merged list at each step. This ensures that the resulting list remains sorted throughout the merging process.
+
+### Approach:
+
+1. **Create a Dummy Node**:
+    - Use a dummy node to simplify the implementation. The merged list will be constructed starting from this dummy node.
+    - A `current` pointer is initialized to the dummy node to track the tail of the merged list.
+
+2. **Traverse Both Lists**:
+    - Use two pointers (`head_A` and `head_B`) to traverse the input lists (`list1` and `list2`).
+    - At each step:
+        - Compare the values of the nodes pointed to by `head_A` and `head_B`.
+        - Attach the smaller node to the `current` pointer's `next`.
+        - Advance the pointer (either `head_A` or `head_B`) of the list from which the node was taken.
+        - Move the `current` pointer forward.
+
+3. **Attach Remaining Nodes**:
+    - Once one of the lists is fully traversed, attach the remaining nodes of the other list to the merged list.
+
+4. **Return the Result**:
+    - The merged list starts at `dummy->next`. Return this node as the head of the merged list.
+
+### Complexity:
+
+- **Time complexity**: \( O(n + m) \)
+    - Both input lists are traversed once, where \( n \) and \( m \) are the lengths of the two lists.
+- **Space complexity**: \( O(1) \)
+    - The merging is done in place without using additional memory for storing nodes.
+
+[Solution Code](21_MergeTwoSortedLists/Solution.cpp)
 
 ## Problem #33: Search In Rotated Sorted Array
 
