@@ -18,6 +18,7 @@
 | 15        | 3Sum                                           | [Link](#problem-15-3Sum)                                          | Java     |
 | 20        | Valid Parentheses                              | [Link](#problem-20-valid-parentheses)                             | Java     |
 | 21        | Merge Two Sorted Lists                         | [Link](#problem-21-merge-two-sorted-lists)                        | C++      |
+| 23        | Merge K Sorted Lists                           | [Link](#problem-23-merge-k-sorted-lists)                          | C++      |
 | 33        | Search in Rotated Sorted Array                 | [Link](#problem-33-search-in-rotated-sorted-array)                | Java     |
 | 49        | Group Anagrams                                 | [Link](#problem-49-group-anagrams)                                | Java     |
 | 53        | Maximum Subarray                               | [Link](#problem-53-maximum-subarray)                              | Java     |
@@ -508,6 +509,44 @@ The key is to iterate through both lists, comparing their elements, and appendin
     - The merging is done in place without using additional memory for storing nodes.
 
 [Solution Code](21_MergeTwoSortedLists/Solution.cpp)
+
+## Problem #23: Merge K Sorted Lists
+
+### Intuition:
+
+The goal of this problem is to merge \( k \) sorted linked lists into a single sorted linked list. Since each of the input lists is already sorted, we can leverage this property to merge them efficiently. Instead of sorting all the nodes from scratch, we can repeatedly merge two lists at a time until only one merged list remains.
+
+By merging the lists iteratively, we minimize the overhead of repeatedly handling all nodes, ensuring a more efficient solution.
+
+### Approach:
+
+1. **Iterative Merging**:
+    - Initialize the result list as `nullptr`.
+    - Traverse through the array of \( k \) linked lists and iteratively merge each list into the result using a helper function (`mergeTwoSortedLists`).
+
+2. **Helper Function**:
+    - Use the `mergeTwoSortedLists` function to merge two sorted linked lists.
+    - Create a dummy node to simplify the merging logic.
+    - Compare the nodes from both lists, attaching the smaller node to the merged list at each step.
+    - After merging, return the list starting from `dummy->next`.
+
+3. **Edge Cases**:
+    - If the input array is empty, return `nullptr`.
+    - If any of the lists in the input array is empty, skip it during merging.
+
+### Complexity:
+
+- **Time Complexity**: \( O(N \times k) \)
+    - Where \( N \) is the average number of nodes in each list, and \( k \) is the number of lists.
+    - Each merge operation takes \( O(N) \), and there are \( k \) lists to merge iteratively.
+- **Space Complexity**: \( O(1) \)
+    - The merging is done in place without using additional memory for nodes.
+
+### Key Notes:
+- The iterative approach simplifies implementation without requiring a priority queue or recursion.
+- This solution can be optimized further using a divide-and-conquer approach or a min-heap.
+
+[Solution Code](23_MergeKSortedLists/Solution.cpp)
 
 ## Problem #33: Search In Rotated Sorted Array
 
