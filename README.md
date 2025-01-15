@@ -16,6 +16,7 @@
 | 10        | Regular Expression Matching                    | [Link](#problem-10-regular-expression-matching)                   | C++      |
 | 11        | Container with Most Water                      | [Link](#problem-11-container-with-most-water)                     | Java     |
 | 15        | 3Sum                                           | [Link](#problem-15-3Sum)                                          | Java     |
+| 19        | Remove Nth Node From End of List               | [Link](#problem-19-remove-nth-node-from-end-of-list)              | Java     |
 | 20        | Valid Parentheses                              | [Link](#problem-20-valid-parentheses)                             | Java     |
 | 21        | Merge Two Sorted Lists                         | [Link](#problem-21-merge-two-sorted-lists)                        | C++      |
 | 23        | Merge K Sorted Lists                           | [Link](#problem-23-merge-k-sorted-lists)                          | C++      |
@@ -435,6 +436,60 @@ used QuickSort to sort the array in O(nlogn), which complements the subsequent t
 - **Space complexity**:O(k) Sorting with QuickSort is in-place, so no additional memory is required for the array.
 
 [Solution Code](jav15ThreeSum/Solution.java)
+
+## Problem #19: Remove Nth Node From End of List
+
+### Intuition:
+
+The goal of this problem is to remove the \(n\)-th node from the end of a singly linked list in one pass. To achieve this, we can use the **two-pointer technique**, which allows us to efficiently find the node to be removed without requiring multiple passes or extra memory.
+
+By maintaining a gap of \(n\) nodes between two pointers (`fast` and `slow`), we ensure that when `fast` reaches the end of the list, `slow` will be just before the node to be removed.
+
+### Approach:
+
+1. **Initialize a Dummy Node**:
+    - Create a dummy node and set its `next` to the head of the linked list. This simplifies edge cases, such as removing the first node.
+    - Set two pointers, `fast` and `slow`, both starting at the dummy node.
+
+2. **Move the Fast Pointer**:
+    - Advance the `fast` pointer \(n + 1\) steps forward. This creates a gap of \(n\) nodes between `fast` and `slow`.
+
+3. **Move Both Pointers**:
+    - Move `fast` and `slow` one step at a time until `fast` reaches the end of the list. At this point, `slow` will point to the node just before the \(n\)-th node from the end.
+
+4. **Remove the Target Node**:
+    - Modify `slow.next` to skip the \(n\)-th node from the end by pointing it to `slow.next.next`.
+
+5. **Return the Result**:
+    - Return `dummy.next`, which is the head of the updated linked list.
+
+### Complexity:
+
+- **Time Complexity**: \(O(L)\), where \(L\) is the length of the linked list. The list is traversed once.
+- **Space Complexity**: \(O(1)\), as the operation is performed in place without using additional memory.
+
+### Key Notes:
+- The dummy node simplifies the implementation by handling edge cases like removing the first node or dealing with an empty list.
+- This approach ensures a single-pass solution, which is optimal for this problem.
+
+### Example:
+
+Input: `head = [1, 2, 3, 4, 5], n = 2`  
+Output: `[1, 2, 3, 5]`
+
+**Steps**:
+1. Move `fast` pointer \(n + 1 = 3\) steps ahead:
+    - After 3 steps, `fast` points to the node with value `3`.
+
+2. Move both pointers until `fast` reaches the end:
+    - `fast` at `5`, `slow` at `3`.
+
+3. Modify `slow.next` to skip the node with value `4`.
+
+4. Return the updated list: `[1, 2, 3, 5]`.
+
+
+[Solution Code](jav19RemoveNthNodeFromEndOfList/Solution.java)
 
 ## Problem #20: Valid Parentheses
 
