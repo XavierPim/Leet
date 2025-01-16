@@ -26,6 +26,7 @@
 | 76        | Minimum Window Substring                       | [Link](#problem-76-minimum-window-substring)                      | Java     |
 | 121       | Best Time to Buy and Sell                      | [Link](#problem-121-best-time-to-buy-and-sell-stock)              | C++      |
 | 141       | Link List Cycle                                | [Link](#problem-141-linked-list-cycle)                            | Java     |
+| 143       | Reorder List                                   | [Link](#problem-143-reorder-list)                                 | Java     |
 | 150       | Evaluate Reverse Polish Notation               | [Link](#problem-150-evaluate-reverse-polish-notation)             | C++      |
 | 152       | Maximum Product Subarray                       | [Link](#problem-152-maximum-product-subarray)                     | Java     |
 | 153       | Find Minimum in Rotated Sorted Array           | [Link](#problem-153-find-minimum-in-rotated-sorted-array)         | Java     |
@@ -489,7 +490,7 @@ Output: `[1, 2, 3, 5]`
 4. Return the updated list: `[1, 2, 3, 5]`.
 
 
-[Solution Code](jav19RemoveNthNodeFromEndOfList/Solution.java)
+[Solution Code](jav19RemoveNthNodeFromEndOfList/Solutions.java)
 
 ## Problem #20: Valid Parentheses
 
@@ -836,6 +837,53 @@ This algorithm uses two pointers moving at different speeds (slow and fast). If 
 
 [Solution Code](jav141LinkedListCycle/Solution.java)
 
+
+## Problem #143: Reorder List
+
+### Intuition:
+
+The goal of this problem is to reorder a singly linked list in a specific interleaving pattern:  
+Given a list:
+L0 → L1 → L2 → ... → Ln-1 → Ln
+Reorder it as:
+L0 → Ln → L1 → Ln-1 → L2 → Ln-2 → ...
+The key is to split the list into two halves, reverse the second half, and then merge the two halves in the desired order. This ensures that the reordering is performed efficiently without modifying the values in the nodes.
+
+### Approach:
+
+1. **Store Nodes in a List**:
+    - Traverse the linked list and store all the nodes in an `ArrayList`.
+    - This makes it easier to access nodes by their positions.
+
+2. **Reorder Using Two Pointers**:
+    - Use two pointers:
+        - `left` starts at the beginning of the list (`L0`).
+        - `right` starts at the end of the list (`Ln`).
+    - Alternate between nodes from the start and end, connecting them to create the reordered list.
+    - Stop when the two pointers meet in the middle.
+
+3. **Ensure Termination**:
+    - After reordering, make sure the last node points to `null` to avoid creating a cycle.
+
+4. **Edge Cases**:
+    - If the list has fewer than two nodes, no reordering is necessary.
+
+### Complexity:
+
+- **Time Complexity**: \( O(n) \)
+    - Traversing the list to store nodes: \( O(n) \).
+    - Reordering the list using two pointers: \( O(n) \).
+
+- **Space Complexity**: \( O(n) \)
+    - An `ArrayList` is used to store the nodes, requiring extra space proportional to the number of nodes in the list.
+
+### Key Notes:
+- The `ArrayList` allows efficient access to nodes during the reordering process.
+- The algorithm ensures that the linked list structure is modified without altering the values stored in the nodes.
+- Edge cases, such as empty lists or single-node lists, are handled gracefully.
+
+[Solution Code](jav143ReorderList/Solution.java)
+
 ## Problem #150: Evaluate Reverse Polish Notation
 
 ### Intuition:
@@ -872,7 +920,7 @@ using a stack, we can efficiently manage the operands and apply operations in th
 - **Time complexity**: O(n) where n is the number of tokens. Each token is processed once, and stack operations (push,
   pop) are O(1).
 - **Space complexity**: O(1), due to the storage of operands on the stack.
-  [Solution Code](150_EvaluateReversePolishNotation/Solution.cpp)
+[Solution Code](150_EvaluateReversePolishNotation/Solution.cpp)
 
 ## Problem #152: Maximum Product Subarray
 
