@@ -23,6 +23,7 @@
 | 33        | Search in Rotated Sorted Array                 | [Link](#problem-33-search-in-rotated-sorted-array)                | Java     |
 | 49        | Group Anagrams                                 | [Link](#problem-49-group-anagrams)                                | Java     |
 | 53        | Maximum Subarray                               | [Link](#problem-53-maximum-subarray)                              | Java     |
+| 73        | Set Matrix Zero                                | [Link](#problem-73-set-matrix-zero)                               | Java     |
 | 76        | Minimum Window Substring                       | [Link](#problem-76-minimum-window-substring)                      | Java     |
 | 121       | Best Time to Buy and Sell                      | [Link](#problem-121-best-time-to-buy-and-sell-stock)              | C++      |
 | 141       | Link List Cycle                                | [Link](#problem-141-linked-list-cycle)                            | Java     |
@@ -722,6 +723,44 @@ array.
   additional data structures.
 
 [Solution Code](jav53MaximumSubarray/Solution.java)
+
+## Problem #73: Set Matrix Zeroes
+
+### Intuition:
+
+The goal of this problem is to update a given matrix such that if an element is `0`, its entire row and column are set to `0`. The challenge is to accomplish this **in place**, without using additional space proportional to the matrix size.
+
+We can achieve this by identifying the rows and columns that need to be zeroed, either by:
+1. Using external space like `TreeSet` to track zero rows and columns, or
+2. Optimizing further by using the matrix itself to store this information.
+
+### Approach:
+
+#### Basic Approach:
+1. Use two sets (`rows` and `cols`) to keep track of the indices of rows and columns that contain at least one zero.
+2. Traverse the matrix to find all `0` elements:
+    - Add their row index to the `rows` set.
+    - Add their column index to the `cols` set.
+3. Perform a second traversal of the matrix:
+    - If the current cell’s row or column index is in the `rows` or `cols` set, set the cell to `0`.
+
+#### Optimized Approach (In-place):
+1. Use the first row and first column of the matrix itself to mark which rows and columns need to be zeroed.
+2. Use a separate variable to track if the first row and first column themselves need to be zeroed.
+3. Perform the following steps:
+    - Traverse the matrix to mark rows and columns in the first row/column.
+    - Traverse the matrix again, using the markers to set cells to `0`.
+    - Finally, handle the first row and column separately, based on the stored variable.
+
+### Complexity:
+
+- **Time Complexity**: \( O(m \times n) \), where \( m \) is the number of rows and \( n \) is the number of columns.
+    - The matrix is traversed twice: once to identify rows/columns and once to set zeros.
+- **Space Complexity**:
+    - **Using `TreeSet`**: \( O(m + n) \), where additional space is used for storing row and column indices.
+    - **Optimized in-place approach**: \( O(1) \), as no additional space is used apart from variables.
+
+[Solution Code](jav73SetMatrixZeroes/Solution.java)
 
 ## Problem #76: Minimum Window Substring
 
