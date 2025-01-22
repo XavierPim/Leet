@@ -21,6 +21,7 @@
 | 21        | Merge Two Sorted Lists                         | [Link](#problem-21-merge-two-sorted-lists)                        | C++      |
 | 23        | Merge K Sorted Lists                           | [Link](#problem-23-merge-k-sorted-lists)                          | C++      |
 | 33        | Search in Rotated Sorted Array                 | [Link](#problem-33-search-in-rotated-sorted-array)                | Java     |
+| 48        | Rotate Image                                   | [Link](#problem-48-rotate-image)                                  | Java     |
 | 49        | Group Anagrams                                 | [Link](#problem-49-group-anagrams)                                | Java     |
 | 53        | Maximum Subarray                               | [Link](#problem-53-maximum-subarray)                              | Java     |
 | 54        | Spiral Matrix                                  | [Link](#problem-54-spiral-matrix)                                 | Java     |
@@ -654,6 +655,50 @@ use a modified binary search to find the target in O(logn) time.
 - **Space complexity**: O(logn) due to the recursive stack, but can be reduced to O(1) if implemented iteratively.
 
 [Solution Code](jav33SearchInRotatedSortedArray/Solution.java)
+
+## Problem #48: Rotate Image
+
+### Intuition:
+
+The goal is to rotate a given \(n \times n\) 2D matrix by 90 degrees clockwise **in place**, meaning no additional memory is used to store a new matrix. This can be achieved by rotating the matrix layer by layer, starting from the outermost layer and working inward.
+
+For each layer, the elements along the edges of the matrix are cyclically swapped in a clockwise direction:
+1. Top-left becomes top-right.
+2. Top-right becomes bottom-right.
+3. Bottom-right becomes bottom-left.
+4. Bottom-left becomes top-left.
+
+This process is repeated for all layers until the matrix is fully rotated.
+
+### Approach:
+
+1. **Define Boundaries**:
+    - Use `leftBound` and `rightBound` to track the boundaries of the current layer being rotated.
+    - Start with `leftBound = 0` and `rightBound = n - 1`.
+
+2. **Iterate Through Layers**:
+    - While `leftBound < rightBound`, process the current layer by rotating its elements in a clockwise direction.
+    - For each element in the layer:
+        - Save the top-left element in a temporary variable.
+        - Move the bottom-left element to the top-left position.
+        - Move the bottom-right element to the bottom-left position.
+        - Move the top-right element to the bottom-right position.
+        - Move the saved top-left element to the top-right position.
+
+3. **Shrink the Boundaries**:
+    - After processing the current layer, increment `leftBound` and decrement `rightBound` to move inward to the next layer.
+
+4. **Repeat Until All Layers Are Rotated**:
+    - Continue until all layers are rotated, i.e., when `leftBound >= rightBound`.
+
+### Complexity:
+
+- **Time Complexity**: \(O(n^2)\)
+    - Each element of the matrix is visited exactly once.
+- **Space Complexity**: \(O(1)\)
+    - The rotation is performed in place without using additional memory.
+
+[Solution Code](jav48RotateImage/Solution.java)
 
 ## Problem #49: Group Anagrams
 
