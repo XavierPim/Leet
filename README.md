@@ -23,6 +23,7 @@
 | 33        | Search in Rotated Sorted Array                 | [Link](#problem-33-search-in-rotated-sorted-array)                | Java     |
 | 49        | Group Anagrams                                 | [Link](#problem-49-group-anagrams)                                | Java     |
 | 53        | Maximum Subarray                               | [Link](#problem-53-maximum-subarray)                              | Java     |
+| 54        | Spiral Matrix                                  | [Link](#problem-54-spiral-matrix)                                 | Java     |
 | 73        | Set Matrix Zero                                | [Link](#problem-73-set-matrix-zero)                               | Java     |
 | 76        | Minimum Window Substring                       | [Link](#problem-76-minimum-window-substring)                      | Java     |
 | 121       | Best Time to Buy and Sell                      | [Link](#problem-121-best-time-to-buy-and-sell-stock)              | C++      |
@@ -723,6 +724,47 @@ array.
   additional data structures.
 
 [Solution Code](jav53MaximumSubarray/Solution.java)
+
+## Problem #54: Spiral Matrix
+
+### Intuition:
+
+The goal is to traverse a 2D matrix in a **spiral order** starting from the top-left corner. The traversal must move in a defined pattern:
+1. From **left to right** along the top row.
+2. From **top to bottom** along the rightmost column.
+3. From **right to left** along the bottom row.
+4. From **bottom to top** along the leftmost column.
+
+This pattern is repeated, shrinking the boundaries of the matrix after completing each direction, until all elements are visited.
+
+The key is to manage **boundaries** (`top`, `bottom`, `left`, `right`) and update them after processing rows or columns.
+
+### Approach:
+
+1. **Define Boundaries**:
+    - Start with `top = 0`, `bottom = m - 1`, `left = 0`, `right = n - 1`, where `m` and `n` are the number of rows and columns, respectively.
+
+2. **Traverse in Spiral Order**:
+    - While the boundaries are valid (`top <= bottom` and `left <= right`):
+        - Traverse from **left to right** along the top boundary. Then move the `top` boundary down.
+        - Traverse from **top to bottom** along the right boundary. Then move the `right` boundary left.
+        - Traverse from **right to left** along the bottom boundary (if still valid). Then move the `bottom` boundary up.
+        - Traverse from **bottom to top** along the left boundary (if still valid). Then move the `left` boundary right.
+
+3. **Collect Results**:
+    - Add each visited element to a `List<Integer>` in the order of traversal.
+
+4. **Stop Condition**:
+    - Stop when all elements have been processed, i.e., when the boundaries overlap.
+
+### Complexity:
+
+- **Time Complexity**: \(O(m \times n)\)
+    - Each element of the matrix is visited exactly once.
+- **Space Complexity**: \(O(1)\)
+    - No extra space is used except for the result list.
+
+[Solution Code](jav54SpiralMatrix/Solution.java)
 
 ## Problem #73: Set Matrix Zeroes
 
