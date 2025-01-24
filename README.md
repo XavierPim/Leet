@@ -27,6 +27,7 @@
 | 54        | Spiral Matrix                                  | [Link](#problem-54-spiral-matrix)                                 | Java     |
 | 73        | Set Matrix Zero                                | [Link](#problem-73-set-matrix-zero)                               | Java     |
 | 76        | Minimum Window Substring                       | [Link](#problem-76-minimum-window-substring)                      | Java     |
+| 79        | Word Search                                    | [Link](#problem-79-word-search)                                   | Java     |
 | 121       | Best Time to Buy and Sell                      | [Link](#problem-121-best-time-to-buy-and-sell-stock)              | C++      |
 | 141       | Link List Cycle                                | [Link](#problem-141-linked-list-cycle)                            | Java     |
 | 143       | Reorder List                                   | [Link](#problem-143-reorder-list)                                 | Java     |
@@ -886,13 +887,59 @@ The task is to find the smallest substring in `s` that contains all the characte
 
 6. **Return Result**:
     - Return the smallest valid substring or an empty string if no valid substring exists.
+
+[Solution Code](jav76MinimumWindowSubstring/Solution.java)
    
 ### Complexity:
 - **Time Complexity**: \( O(m + n) \), where \( m \) is the length of `s` and \( n \) is the length of `t`.
 - **Space Complexity**: \( O(k) \), where \( k \) is the number of unique characters in `t`.
 
+## Problem #79: Word Search
 
-[Solution Code](jav76MinimumWindowSubstring/Solution.java)
+### Intuition:
+
+The problem requires determining if a given word exists in a 2D grid of characters. The word can be constructed by sequentially adjacent letters in the grid, where adjacent cells are horizontally or vertically neighboring. Each cell can only be used once in a path.
+
+The key is to use **Depth-First Search (DFS)** with **backtracking**:
+1. Start from any cell that matches the first character of the word.
+2. Explore all possible paths (up, down, left, right) recursively.
+3. If a path leads to the complete word, return true. Otherwise, backtrack to explore other paths.
+
+
+### Approach:
+
+1. **Iterate Over the Grid**:
+    - Traverse each cell in the grid.
+    - If the current cell matches the first character of the word, start a DFS from that cell.
+
+2. **DFS Implementation**:
+    - From the current cell, recursively search in all 4 directions (up, down, left, right).
+    - Use a temporary marker (e.g., `#`) to mark the cell as visited during the current path.
+    - If the current cell does not match the expected character or is out of bounds, terminate that path.
+
+3. **Backtracking**:
+    - After exploring a path, restore the cell's original value to allow it to be used in other paths.
+
+4. **Base Cases**:
+    - If the current index matches the word's length, return true (the word is found).
+    - If the cell is out of bounds or does not match the current character, terminate that path.
+
+5. **Stop Condition**:
+    - If any DFS path finds the complete word, return true.
+
+
+### Complexity:
+
+- **Time Complexity**: \(O(N \times 3^L)\)
+    - \(N\): Total number of cells in the grid (\(m \times n\)).
+    - \(L\): Length of the word.
+    - Each cell is visited once, and for each cell, up to 3 valid moves are explored (excluding revisiting the previous cell).
+
+- **Space Complexity**: \(O(L)\)
+    - The recursion stack can go as deep as the length of the word.
+
+    
+[Solution Code](jav79WordSearch/Solution.java)
 
 ## Problem #121: Best Time to Buy and Sell Stock
 
