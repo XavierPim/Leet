@@ -28,6 +28,7 @@
 | 73        | Set Matrix Zero                                | [Link](#problem-73-set-matrix-zero)                               | Java     |
 | 76        | Minimum Window Substring                       | [Link](#problem-76-minimum-window-substring)                      | Java     |
 | 79        | Word Search                                    | [Link](#problem-79-word-search)                                   | Java     |
+| 104       | Maximum Depth of Binary Tree                   | [Link](#problem-104-maxumim-depth-of-binary-tree)                 | Java     |
 | 121       | Best Time to Buy and Sell                      | [Link](#problem-121-best-time-to-buy-and-sell-stock)              | C++      |
 | 141       | Link List Cycle                                | [Link](#problem-141-linked-list-cycle)                            | Java     |
 | 143       | Reorder List                                   | [Link](#problem-143-reorder-list)                                 | Java     |
@@ -940,6 +941,33 @@ The key is to use **Depth-First Search (DFS)** with **backtracking**:
 
     
 [Solution Code](jav79WordSearch/Solution.java)
+
+## Problem #104: Maximum Depth of Binary Tree
+
+### Intuition:
+
+The problem requires finding the maximum depth of a binary tree, defined as the number of nodes along the longest path from the root node to a leaf node. This can be solved using a recursive approach by calculating the maximum depth of the left and right subtrees and combining the results.
+
+### Approach:
+
+1. **Recursive Depth-First Search (DFS)**:
+    - If the tree is empty (`root == null`), the depth is `0`.
+    - If the current node is a leaf node (both `root.left` and `root.right` are `null`), the depth is `1`.
+    - Recursively calculate the depth of the left and right subtrees.
+    - The maximum depth of the tree is `1 + Math.max(leftDepth, rightDepth)`.
+
+2. **Base Cases**:
+    - Return `0` for an empty tree.
+    - Return `1` for a leaf node.
+
+### Complexity:
+
+- **Time Complexity**: \(O(n)\)
+    - Each node in the tree is visited exactly once during the recursion.
+- **Space Complexity**: \(O(h)\)
+    - The recursion stack can go as deep as the height \(h\) of the tree.
+
+[Solution Code](jav104MaximumDepthOfBinaryTree/Solution.java)
 
 ## Problem #121: Best Time to Buy and Sell Stock
 
