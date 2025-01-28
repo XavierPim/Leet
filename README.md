@@ -28,7 +28,8 @@
 | 73        | Set Matrix Zero                                | [Link](#problem-73-set-matrix-zero)                               | Java     |
 | 76        | Minimum Window Substring                       | [Link](#problem-76-minimum-window-substring)                      | Java     |
 | 79        | Word Search                                    | [Link](#problem-79-word-search)                                   | Java     |
-| 104       | Maximum Depth of Binary Tree                   | [Link](#problem-104-maxumim-depth-of-binary-tree)                 | Java     |
+| 100       | Same Tree                                      | [Link](#problem-100-same-tree)                                    | Java     |
+| 104       | Maximum Depth of Binary Tree                   | [Link](#problem-104-maximum-depth-of-binary-tree)                 | Java     |
 | 121       | Best Time to Buy and Sell                      | [Link](#problem-121-best-time-to-buy-and-sell-stock)              | C++      |
 | 141       | Link List Cycle                                | [Link](#problem-141-linked-list-cycle)                            | Java     |
 | 143       | Reorder List                                   | [Link](#problem-143-reorder-list)                                 | Java     |
@@ -941,6 +942,40 @@ The key is to use **Depth-First Search (DFS)** with **backtracking**:
 
     
 [Solution Code](jav79WordSearch/Solution.java)
+## Problem #100: Same Tree
+
+### Intuition:
+
+To determine whether two binary trees are the same, we must ensure that:
+1. Both trees are structurally identical.
+2. The corresponding nodes in both trees have the same values.
+
+The problem can be broken into smaller subproblems:
+- Compare the root nodes of both trees.
+- Recursively check their left and right subtrees.
+- If both subtrees match at every level, the trees are the same.
+
+This is naturally suited for a recursive approach.
+
+### Approach:
+
+1. **Base Cases**:
+    - If both nodes are `null`, the trees are identical at this point, so return `true`.
+    - If one node is `null` and the other is not, the trees are not the same, so return `false`.
+
+2. **Recursive Step**:
+    - If both nodes are not `null`, compare their values:
+        - If the values match, recursively check the left subtrees (`p.left` and `q.left`) and right subtrees (`p.right` and `q.right`).
+        - If any mismatch is found, return `false`.
+
+3. Return the result of combining the checks for the current node, left subtree, and right subtree.
+
+### Complexity:
+
+- **Time Complexity**: \(O(n)\), where \(n\) is the total number of nodes in the smaller tree. Each node is visited exactly once.
+- **Space Complexity**: \(O(h)\), where \(h\) is the height of the tree. This is due to the recursion stack.
+
+[Solution Code](jav100SameTree/Solution.java)
 
 ## Problem #104: Maximum Depth of Binary Tree
 
