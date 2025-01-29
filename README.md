@@ -40,6 +40,7 @@
 | 191       | Number of 1 Bits                               | [Link](#problem-191-number-of-1-bits)                             | Java     |
 | 206       | Reverse a Linked List                          | [Link](#problem-206-reverse-linked-list)                          | C++      |
 | 217       | Contains Duplicate                             | [Link](#problem-217-contains-duplicate)                           | C++      |
+| 226       | Invert Binary Tree                             | [Link](#problem-226-invert-binary-tree)                           | Java     |
 | 238       | Product of Array Except Self                   | [Link](#problem-238-product-of-array-except-self)                 | C++      |
 | 242       | Valid Anagram                                  | [Link](#problem-242-valid-anagram)                                | Java     |
 | 268       | Missing Number                                 | [Link](#problem-268-missing-number)                               | Java     |
@@ -1336,6 +1337,45 @@ we iterate through the array and see if we've seen any of them before.
   as it requires a single pass through the vector and utilizes O(n) space for the set.
 - **Space complexity**: O(1) as it exits out right after first detection
   [Solution Code](217_ContainsDuplicate/Solution.cpp)
+
+## Problem #226: Invert Binary Tree
+
+### Intuition:
+
+The goal of this problem is to invert a binary tree, meaning we swap the left and right subtrees of every node. This can be achieved using a recursive approach where we:
+1. Swap the left and right children of the current node.
+2. Recursively invert the left subtree.
+3. Recursively invert the right subtree.
+
+Since each subtree is itself a binary tree, recursion is a natural way to solve the problem.
+
+### Approach:
+
+1. **Base Case**:
+    - If the current node (`root`) is `null`, return `null` (nothing to invert).
+
+2. **Swap the Children**:
+    - Store the left subtree in a temporary variable.
+    - Assign the right subtree to the left.
+    - Assign the temporary left subtree to the right.
+
+3. **Recursive Calls**:
+    - Recursively call `invertTree` on the left subtree.
+    - Recursively call `invertTree` on the right subtree.
+
+4. **Return the Root**:
+    - After inverting both subtrees, return the `root` node.
+
+### Complexity:
+
+- **Time Complexity**: \(O(n)\)
+    - Each node in the tree is visited once and swapped.
+
+- **Space Complexity**: \(O(h)\)
+    - The recursion stack takes up space proportional to the height of the tree \(h\), which is \(O(\log n)\) for balanced trees and \(O(n)\) for skewed trees.
+
+  [Solution Code](jav226InvertBinaryTree/Solution.java)
+
 
 ## Problem #238: Product of Array Except Self
 
