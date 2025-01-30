@@ -29,6 +29,7 @@
 | 76        | Minimum Window Substring                       | [Link](#problem-76-minimum-window-substring)                      | Java     |
 | 79        | Word Search                                    | [Link](#problem-79-word-search)                                   | Java     |
 | 100       | Same Tree                                      | [Link](#problem-100-same-tree)                                    | Java     |
+| 102       | Binary Tree Level Order Traversal              | [Link](#problem-102-binary-tree-level-oder-traversal)             | Java     |
 | 104       | Maximum Depth of Binary Tree                   | [Link](#problem-104-maximum-depth-of-binary-tree)                 | Java     |
 | 121       | Best Time to Buy and Sell                      | [Link](#problem-121-best-time-to-buy-and-sell-stock)              | C++      |
 | 124       | Binary Tree Max Path Sum                       | [Link](#problem-124-binary-tree-max-path-sum)                     | Java     |
@@ -944,6 +945,7 @@ The key is to use **Depth-First Search (DFS)** with **backtracking**:
 
     
 [Solution Code](jav79WordSearch/Solution.java)
+
 ## Problem #100: Same Tree
 
 ### Intuition:
@@ -978,6 +980,42 @@ This is naturally suited for a recursive approach.
 - **Space Complexity**: \(O(h)\), where \(h\) is the height of the tree. This is due to the recursion stack.
 
 [Solution Code](jav100SameTree/Solution.java)
+
+## Problem #102: Binary Tree Level Order Traversal
+
+### Intuition:
+
+The problem requires traversing a binary tree **level by level**, returning a list of lists where each sublist represents the values of nodes at a particular depth.
+
+A **Breadth-First Search (BFS)** approach using a **queue** is best suited for this problem since it processes nodes level by level.
+
+Alternatively, a **recursive Depth-First Search (DFS)** can also be used, where we pass the level index in recursive calls to ensure values are inserted in the correct lists.
+
+
+### Approach:
+
+#### **1. Iterative BFS Approach (Using a Queue)**
+- **Initialize a queue** and add the root node.
+- Process nodes **level by level**:
+    - Track the number of nodes in the current level (`queue.size()`).
+    - Extract nodes, store their values, and add their children to the queue.
+- **Continue until all levels are processed**.
+
+#### **2. Recursive DFS Approach**
+- Traverse the tree using **DFS**, keeping track of the current depth.
+- **Ensure each level has its own list** in the result list.
+- **Insert node values into the appropriate level list** based on recursion depth.
+
+
+### Complexity:
+
+- **Time Complexity**: \(O(n)\)
+    - Each node is visited once.
+- **Space Complexity**:
+    - **BFS**: \(O(n)\) (Queue stores nodes of the widest level).
+    - **DFS**: \(O(h)\) (Recursion stack depth, where \(h\) is the height of the tree).
+
+[Solution Code](jav102BinaryTreeLevelOrderTraversal/Solution.java)
 
 ## Problem #104: Maximum Depth of Binary Tree
 
