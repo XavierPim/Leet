@@ -31,6 +31,7 @@
 | 100       | Same Tree                                      | [Link](#problem-100-same-tree)                                    | Java     |
 | 104       | Maximum Depth of Binary Tree                   | [Link](#problem-104-maximum-depth-of-binary-tree)                 | Java     |
 | 121       | Best Time to Buy and Sell                      | [Link](#problem-121-best-time-to-buy-and-sell-stock)              | C++      |
+| 124       | Binary Tree Max Path Sum                       | [Link](#problem-124-binary-tree-max-path-sum)                     | Java     |
 | 141       | Link List Cycle                                | [Link](#problem-141-linked-list-cycle)                            | Java     |
 | 143       | Reorder List                                   | [Link](#problem-143-reorder-list)                                 | Java     |
 | 150       | Evaluate Reverse Polish Notation               | [Link](#problem-150-evaluate-reverse-polish-notation)             | C++      |
@@ -1035,7 +1036,50 @@ Approach:
 - **Time complexity**: O(n) where n is the number of prices. We traverse the list once.
 - **Space complexity**: O(1), as we only use a few variables to track the smallest price, the maximum profit, and
   current indices for buy/sell days.
-  [Solution Code](217_ContainsDuplicate/Solution.cpp)
+
+[Solution Code](121_BestTimeToBuyAndSell/Solution.cpp)
+
+## Problem #124: Binary Tree Maximum Path Sum
+
+### Intuition:
+
+The goal of this problem is to find the **maximum path sum** in a binary tree. A path is defined as any sequence of connected nodes where each pair of adjacent nodes in the sequence has an edge connecting them. The path **does not need to pass through the root**.
+
+Since each subtree is also a binary tree, we can use a **recursive Depth-First Search (DFS)** approach to compute the maximum path sum at each node.
+
+---
+
+### Approach:
+
+1. **Recursive DFS Traversal**:
+    - Compute the **maximum path sum** for each node’s left and right subtree.
+    - Ignore negative path sums by taking `Math.max(leftSubtreeSum, 0)`.
+    - The **best path sum including the current node** is:
+      ```
+      currentPathSum = node.val + leftSubtreeSum + rightSubtreeSum
+      ```
+    - Track the **global maximum path sum** (`maxSum`) across all nodes.
+
+2. **Returning a Single-Path Sum**:
+    - Since a path cannot split when continuing to the parent, we return:
+      ```
+      return node.val + Math.max(leftSubtreeSum, rightSubtreeSum)
+      ```
+    - This ensures that only the **best single-path sum** is passed upwards.
+
+3. **Base Case**:
+    - If the node is `null`, return `0` (it does not contribute to the sum).
+
+---
+
+### Complexity:
+
+- **Time Complexity**: \(O(n)\)
+    - Each node is visited exactly once.
+- **Space Complexity**: \(O(h)\)
+    - The recursion stack depth is at most the tree height \(h\).
+
+[Solution Code](jav124BinaryTreeMaxPathSum/Solution.java)
 
 ## Problem #141: Linked List Cycle
 
