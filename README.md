@@ -46,6 +46,7 @@
 | 238       | Product of Array Except Self                   | [Link](#problem-238-product-of-array-except-self)                 | C++      |
 | 242       | Valid Anagram                                  | [Link](#problem-242-valid-anagram)                                | Java     |
 | 268       | Missing Number                                 | [Link](#problem-268-missing-number)                               | Java     |
+| 297       | Serialize and Deserialize Binary Tree          | [Link](#problem-297-serialize-and-deserialize-binary-tree)        | Java     |
 | 338       | Counting Bits                                  | [Link](#problem-338-counting-bits)                                | Java     |
 | 371       | Sum of Two Integers                            | [Link](#problem-371-sum-of-two-integers)                          | Java     |
 | 424       | Longest Repeating Character Replacement        | [Link](#problem-424-longest-repeating-character-replacement)      | Java     |
@@ -1554,6 +1555,35 @@ By XORing all numbers in the range [0,n] and all elements in nums, the numbers t
 - **Space complexity**: \( O(1) \), since the solution uses constant additional space.
 
   [Solution Code](jav268MissingNumber/Solution.java)
+
+## Problem #297: Serialize and Deserialize Binary Tree
+
+### Intuition:
+
+The problem requires **converting a binary tree into a string (serialization)** and **reconstructing the original tree from that string (deserialization)**. We use **level-order traversal (BFS) with a queue** to maintain the correct structure of the tree.
+
+### Approach:
+
+### **1. Serialization (Tree → String)**
+- Use **BFS (Breadth-First Search)** to traverse the tree **level by level**.
+- Store `"null"` for missing children to **preserve the tree structure**.
+- Use a **`StringBuilder`** to efficiently construct the serialized string.
+- Remove **trailing `"null"` values** to avoid unnecessary storage.
+
+### **2. Deserialization (String → Tree)**
+- **Split the string** into an array of values.
+- Reconstruct the tree **level by level** using **BFS and a queue**.
+- Process nodes **in the same order they were serialized**.
+- Ensure **proper boundary checks** to avoid `ArrayIndexOutOfBoundsException`.
+
+### Complexity:
+
+- **Time Complexity**: \(O(n)\)
+    - Each node is processed once during serialization and once during deserialization.
+- **Space Complexity**: \(O(n)\)
+    - The queue stores all nodes during traversal.
+
+[Solution Code](jav297/Solution.java)
 
 ## Problem #338: Counting Bits
 
