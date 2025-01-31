@@ -50,6 +50,7 @@
 | 338       | Counting Bits                                  | [Link](#problem-338-counting-bits)                                | Java     |
 | 371       | Sum of Two Integers                            | [Link](#problem-371-sum-of-two-integers)                          | Java     |
 | 424       | Longest Repeating Character Replacement        | [Link](#problem-424-longest-repeating-character-replacement)      | Java     |
+| 572       | Subtree of Another Tree                        | [Link](#problem-subtree-of-another-tree)                          | Java     |
 
 ---
 
@@ -1706,4 +1707,36 @@ if there is any character to help lengthen the substring if the element is not t
 
 - **Time complexity**: O(n), where n number of elements
 - **Space complexity**: O(n), where we use the space of the input string array
-  [Solution Code](jav424LongestRepeatingCharacterReplacement/Solution.java)
+
+[Solution Code](jav424LongestRepeatingCharacterReplacement/Solution.java)
+
+## Problem #572: Subtree of Another Tree
+
+### Intuition:
+
+The problem requires checking if a given binary tree `subRoot` is a subtree of another tree `root`. A subtree consists of a node in `root` and all its descendants. The goal is to determine whether `subRoot` exists within `root` while preserving structure.
+
+A **DFS (Depth-First Search) approach** is suitable because:
+- We can **recursively traverse `root`** to check if any node matches `subRoot`'s root.
+- If a potential match is found, we perform **a subtree equality check** using another DFS function.
+
+### Approach:
+
+### **1. Recursively Traverse `root`**
+- If `root` is `null`, return `false` (base case).
+- If `root` matches `subRoot`, check if the trees are identical using `isSameTree()`.
+- Otherwise, **recursively check the left and right subtrees**.
+
+### **2. Check for Subtree Equality**
+- If both trees are `null`, they match.
+- If one tree is `null` and the other isn’t, return `false`.
+- If the values don’t match, return `false`.
+- Otherwise, **recursively check left and right subtrees**.
+
+### Complexity:
+
+- **Time Complexity**: \(O(n \times m)\)
+    - For each node in `root` (\(O(n)\)), we may need to compare with `subRoot` (\(O(m)\)).
+- **Space Complexity**: \(O(h)\) (Recursion depth, where `h` is the height of `root`).
+
+[Solution Code](jav572SubTreeOfAnotherTree/Solution.java)
