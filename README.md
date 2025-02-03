@@ -25,6 +25,7 @@
 | 49        | Group Anagrams                                            | [Link](#problem-49-group-anagrams)                                          | Java     |
 | 53        | Maximum Subarray                                          | [Link](#problem-53-maximum-subarray)                                        | Java     |
 | 54        | Spiral Matrix                                             | [Link](#problem-54-spiral-matrix)                                           | Java     |
+| 70        | Climbing Stairs                                           | [Link](#problem-70-climbing-stairs)                                         | Java     |
 | 73        | Set Matrix Zero                                           | [Link](#problem-73-set-matrix-zero)                                         | Java     |
 | 76        | Minimum Window Substring                                  | [Link](#problem-76-minimum-window-substring)                                | Java     |
 | 79        | Word Search                                               | [Link](#problem-79-word-search)                                             | Java     |
@@ -49,6 +50,7 @@
 | 268       | Missing Number                                            | [Link](#problem-268-missing-number)                                         | Java     |
 | 297       | Serialize and Deserialize Binary Tree                     | [Link](#problem-297-serialize-and-deserialize-binary-tree)                  | Java     |
 | 338       | Counting Bits                                             | [Link](#problem-338-counting-bits)                                          | Java     |
+| 347       | Top K Frequent Elements                                   | [Link](#problem-347-top-frequent-elements)                                  | Java     |
 | 371       | Sum of Two Integers                                       | [Link](#problem-371-sum-of-two-integers)                                    | Java     |
 | 424       | Longest Repeating Character Replacement                   | [Link](#problem-424-longest-repeating-character-replacement)                | Java     |
 | 572       | Subtree of Another Tree                                   | [Link](#problem-subtree-of-another-tree)                                    | Java     |
@@ -819,6 +821,34 @@ The key is to manage **boundaries** (`top`, `bottom`, `left`, `right`) and updat
     - No extra space is used except for the result list.
 
 [Solution Code](jav54SpiralMatrix/Solution.java)
+
+## Problem #70: Climbing Stairs
+
+### Intuition:
+
+The problem follows the Fibonacci sequence because, at each step, you can either:
+- Take **1 step** from `(n-1)`.
+- Take **2 steps** from `(n-2)`.
+  Thus, the number of ways to reach `n` is the sum of ways to reach `(n-1)` and `(n-2)`.
+
+### Approach:
+
+1. **Base Cases**:
+    - `n == 1 → return 1`
+    - `n == 2 → return 2`
+
+2. **Iterate using Dynamic Programming**:
+    - Use two variables `prev1` (ways for `n-1`) and `prev2` (ways for `n-2`).
+    - Compute the current step as `current = prev1 + prev2`.
+    - Update `prev1` and `prev2` iteratively.
+
+### Complexity:
+
+- **Time Complexity:** \(O(n)\) – Single loop from `3` to `n`.
+- **Space Complexity:** \(O(1)\) – Uses only three variables.
+
+
+[Solution Code](jav70ClimbingStairs/Solution.java)
 
 ## Problem #73: Set Matrix Zeroes
 
@@ -1642,6 +1672,32 @@ The problem requires calculating the number of 1 Bits up to the value of n.(incl
 - **Time complexity**: O(n), where n is the number of elements since we need to chack each element once.
 - **Space complexity**: O(n) we only need to use the size of the n array + 1
   [Solution Code](jav338CountingBits/Solution.java)
+
+## Problem #347: Top K Frequent Elements
+
+### Intuition:
+
+The problem requires finding the `k` most frequent elements in an array. A **hashmap** is used to count occurrences, and a **min heap** efficiently keeps track of the top `k` elements.
+
+### Approach:
+
+1. **Count Frequencies**:
+    - Use a `HashMap<Integer, Integer>` to store `(element → frequency)` pairs.
+
+2. **Use a Min Heap (Priority Queue)**:
+    - Insert elements into a min heap, sorted by frequency.
+    - If the heap size exceeds `k`, remove the least frequent element.
+
+3. **Extract the Top `k` Elements**:
+    - Convert heap contents into a result array.
+
+### Complexity:
+
+- **Time Complexity:** \(O(n \log k)\) – Insertion/removal in a heap is \(O(\log k)\), and we process `n` elements.
+- **Space Complexity:** \(O(n)\) – Stores frequency counts and heap elements.
+
+
+[Solution Code](jav347TopKFrequenElements/Solution.java)
 
 ## Problem #371: Sum Of Two Integers
 
