@@ -2,55 +2,56 @@
 
 ## Table of Contents
 
-| Problem # | Problem Name                                   | GoTo                                                              | Language |
-|-----------|------------------------------------------------|-------------------------------------------------------------------|----------|
-| 1         | Two Sum                                        | [Link](#problem-1-two-sum)                                        | C++      |  
-| 2         | Add Two Numbers                                | [Link](#problem-2-add-two-numbers)                                | C++      |
-| 3         | Longest Substring Without Repeating Characters | [Link](#problem-3-longest-substring-without-repeating-characters) | C++      |
-| 4         | Median of Two Sorted Arrays                    | [Link](#problem-4-median-of-two-sorted-arrays)                    | C++      |
-| 5         | Longest Palindromic Substring                  | [Link](#problem-5-longest-palindromic-substring)                  | C++      |
-| 6         | Zigzag Conversion                              | [Link](#problem-6-zigzag-conversion)                              | C++      |
-| 7         | Reverse Integer                                | [Link](#problem-7-reverse-integer)                                | C++      |
-| 8         | String to Integer                              | [Link](#problem-8-string-to-integer)                              | C++      |
-| 9         | Palindrome Number                              | [Link](#problem-9-palindrome-number)                              | C++      |
-| 10        | Regular Expression Matching                    | [Link](#problem-10-regular-expression-matching)                   | C++      |
-| 11        | Container with Most Water                      | [Link](#problem-11-container-with-most-water)                     | Java     |
-| 15        | 3Sum                                           | [Link](#problem-15-3Sum)                                          | Java     |
-| 19        | Remove Nth Node From End of List               | [Link](#problem-19-remove-nth-node-from-end-of-list)              | Java     |
-| 20        | Valid Parentheses                              | [Link](#problem-20-valid-parentheses)                             | Java     |
-| 21        | Merge Two Sorted Lists                         | [Link](#problem-21-merge-two-sorted-lists)                        | C++      |
-| 23        | Merge K Sorted Lists                           | [Link](#problem-23-merge-k-sorted-lists)                          | C++      |
-| 33        | Search in Rotated Sorted Array                 | [Link](#problem-33-search-in-rotated-sorted-array)                | Java     |
-| 48        | Rotate Image                                   | [Link](#problem-48-rotate-image)                                  | Java     |
-| 49        | Group Anagrams                                 | [Link](#problem-49-group-anagrams)                                | Java     |
-| 53        | Maximum Subarray                               | [Link](#problem-53-maximum-subarray)                              | Java     |
-| 54        | Spiral Matrix                                  | [Link](#problem-54-spiral-matrix)                                 | Java     |
-| 73        | Set Matrix Zero                                | [Link](#problem-73-set-matrix-zero)                               | Java     |
-| 76        | Minimum Window Substring                       | [Link](#problem-76-minimum-window-substring)                      | Java     |
-| 79        | Word Search                                    | [Link](#problem-79-word-search)                                   | Java     |
-| 100       | Same Tree                                      | [Link](#problem-100-same-tree)                                    | Java     |
-| 102       | Binary Tree Level Order Traversal              | [Link](#problem-102-binary-tree-level-oder-traversal)             | Java     |
-| 104       | Maximum Depth of Binary Tree                   | [Link](#problem-104-maximum-depth-of-binary-tree)                 | Java     |
-| 121       | Best Time to Buy and Sell                      | [Link](#problem-121-best-time-to-buy-and-sell-stock)              | C++      |
-| 124       | Binary Tree Max Path Sum                       | [Link](#problem-124-binary-tree-max-path-sum)                     | Java     |
-| 141       | Link List Cycle                                | [Link](#problem-141-linked-list-cycle)                            | Java     |
-| 143       | Reorder List                                   | [Link](#problem-143-reorder-list)                                 | Java     |
-| 150       | Evaluate Reverse Polish Notation               | [Link](#problem-150-evaluate-reverse-polish-notation)             | C++      |
-| 152       | Maximum Product Subarray                       | [Link](#problem-152-maximum-product-subarray)                     | Java     |
-| 153       | Find Minimum in Rotated Sorted Array           | [Link](#problem-153-find-minimum-in-rotated-sorted-array)         | Java     |
-| 190       | Reverse Bits                                   | [Link](#problem-190-reverse-bits)                                 | Java     |
-| 191       | Number of 1 Bits                               | [Link](#problem-191-number-of-1-bits)                             | Java     |
-| 206       | Reverse a Linked List                          | [Link](#problem-206-reverse-linked-list)                          | C++      |
-| 217       | Contains Duplicate                             | [Link](#problem-217-contains-duplicate)                           | C++      |
-| 226       | Invert Binary Tree                             | [Link](#problem-226-invert-binary-tree)                           | Java     |
-| 238       | Product of Array Except Self                   | [Link](#problem-238-product-of-array-except-self)                 | C++      |
-| 242       | Valid Anagram                                  | [Link](#problem-242-valid-anagram)                                | Java     |
-| 268       | Missing Number                                 | [Link](#problem-268-missing-number)                               | Java     |
-| 297       | Serialize and Deserialize Binary Tree          | [Link](#problem-297-serialize-and-deserialize-binary-tree)        | Java     |
-| 338       | Counting Bits                                  | [Link](#problem-338-counting-bits)                                | Java     |
-| 371       | Sum of Two Integers                            | [Link](#problem-371-sum-of-two-integers)                          | Java     |
-| 424       | Longest Repeating Character Replacement        | [Link](#problem-424-longest-repeating-character-replacement)      | Java     |
-| 572       | Subtree of Another Tree                        | [Link](#problem-subtree-of-another-tree)                          | Java     |
+| Problem # | Problem Name                                              | GoTo                                                                        | Language |
+|-----------|-----------------------------------------------------------|-----------------------------------------------------------------------------|----------|
+| 1         | Two Sum                                                   | [Link](#problem-1-two-sum)                                                  | C++      |  
+| 2         | Add Two Numbers                                           | [Link](#problem-2-add-two-numbers)                                          | C++      |
+| 3         | Longest Substring Without Repeating Characters            | [Link](#problem-3-longest-substring-without-repeating-characters)           | C++      |
+| 4         | Median of Two Sorted Arrays                               | [Link](#problem-4-median-of-two-sorted-arrays)                              | C++      |
+| 5         | Longest Palindromic Substring                             | [Link](#problem-5-longest-palindromic-substring)                            | C++      |
+| 6         | Zigzag Conversion                                         | [Link](#problem-6-zigzag-conversion)                                        | C++      |
+| 7         | Reverse Integer                                           | [Link](#problem-7-reverse-integer)                                          | C++      |
+| 8         | String to Integer                                         | [Link](#problem-8-string-to-integer)                                        | C++      |
+| 9         | Palindrome Number                                         | [Link](#problem-9-palindrome-number)                                        | C++      |
+| 10        | Regular Expression Matching                               | [Link](#problem-10-regular-expression-matching)                             | C++      |
+| 11        | Container with Most Water                                 | [Link](#problem-11-container-with-most-water)                               | Java     |
+| 15        | 3Sum                                                      | [Link](#problem-15-3Sum)                                                    | Java     |
+| 19        | Remove Nth Node From End of List                          | [Link](#problem-19-remove-nth-node-from-end-of-list)                        | Java     |
+| 20        | Valid Parentheses                                         | [Link](#problem-20-valid-parentheses)                                       | Java     |
+| 21        | Merge Two Sorted Lists                                    | [Link](#problem-21-merge-two-sorted-lists)                                  | C++      |
+| 23        | Merge K Sorted Lists                                      | [Link](#problem-23-merge-k-sorted-lists)                                    | C++      |
+| 33        | Search in Rotated Sorted Array                            | [Link](#problem-33-search-in-rotated-sorted-array)                          | Java     |
+| 48        | Rotate Image                                              | [Link](#problem-48-rotate-image)                                            | Java     |
+| 49        | Group Anagrams                                            | [Link](#problem-49-group-anagrams)                                          | Java     |
+| 53        | Maximum Subarray                                          | [Link](#problem-53-maximum-subarray)                                        | Java     |
+| 54        | Spiral Matrix                                             | [Link](#problem-54-spiral-matrix)                                           | Java     |
+| 73        | Set Matrix Zero                                           | [Link](#problem-73-set-matrix-zero)                                         | Java     |
+| 76        | Minimum Window Substring                                  | [Link](#problem-76-minimum-window-substring)                                | Java     |
+| 79        | Word Search                                               | [Link](#problem-79-word-search)                                             | Java     |
+| 100       | Same Tree                                                 | [Link](#problem-100-same-tree)                                              | Java     |
+| 102       | Binary Tree Level Order Traversal                         | [Link](#problem-102-binary-tree-level-oder-traversal)                       | Java     |
+| 104       | Maximum Depth of Binary Tree                              | [Link](#problem-104-maximum-depth-of-binary-tree)                           | Java     |
+| 105       | Construct Binary Tree From Preorder and Inorder Traversal | [Link](#problem-construct-binary-tree-from-preorder-and-inorder-travaersal) | Java     |
+| 121       | Best Time to Buy and Sell                                 | [Link](#problem-121-best-time-to-buy-and-sell-stock)                        | C++      |
+| 124       | Binary Tree Max Path Sum                                  | [Link](#problem-124-binary-tree-max-path-sum)                               | Java     |
+| 141       | Link List Cycle                                           | [Link](#problem-141-linked-list-cycle)                                      | Java     |
+| 143       | Reorder List                                              | [Link](#problem-143-reorder-list)                                           | Java     |
+| 150       | Evaluate Reverse Polish Notation                          | [Link](#problem-150-evaluate-reverse-polish-notation)                       | C++      |
+| 152       | Maximum Product Subarray                                  | [Link](#problem-152-maximum-product-subarray)                               | Java     |
+| 153       | Find Minimum in Rotated Sorted Array                      | [Link](#problem-153-find-minimum-in-rotated-sorted-array)                   | Java     |
+| 190       | Reverse Bits                                              | [Link](#problem-190-reverse-bits)                                           | Java     |
+| 191       | Number of 1 Bits                                          | [Link](#problem-191-number-of-1-bits)                                       | Java     |
+| 206       | Reverse a Linked List                                     | [Link](#problem-206-reverse-linked-list)                                    | C++      |
+| 217       | Contains Duplicate                                        | [Link](#problem-217-contains-duplicate)                                     | C++      |
+| 226       | Invert Binary Tree                                        | [Link](#problem-226-invert-binary-tree)                                     | Java     |
+| 238       | Product of Array Except Self                              | [Link](#problem-238-product-of-array-except-self)                           | C++      |
+| 242       | Valid Anagram                                             | [Link](#problem-242-valid-anagram)                                          | Java     |
+| 268       | Missing Number                                            | [Link](#problem-268-missing-number)                                         | Java     |
+| 297       | Serialize and Deserialize Binary Tree                     | [Link](#problem-297-serialize-and-deserialize-binary-tree)                  | Java     |
+| 338       | Counting Bits                                             | [Link](#problem-338-counting-bits)                                          | Java     |
+| 371       | Sum of Two Integers                                       | [Link](#problem-371-sum-of-two-integers)                                    | Java     |
+| 424       | Longest Repeating Character Replacement                   | [Link](#problem-424-longest-repeating-character-replacement)                | Java     |
+| 572       | Subtree of Another Tree                                   | [Link](#problem-subtree-of-another-tree)                                    | Java     |
 
 ---
 
@@ -1045,6 +1046,31 @@ The problem requires finding the maximum depth of a binary tree, defined as the 
     - The recursion stack can go as deep as the height \(h\) of the tree.
 
 [Solution Code](jav104MaximumDepthOfBinaryTree/Solution.java)
+
+## Problem #105: Construct Binary Tree from Preorder and Inorder Traversal
+
+### Intuition:
+- **Preorder Traversal:** Visits nodes in the order **root, left subtree, right subtree**. Therefore, the first element in the preorder array is always the root.
+- **Inorder Traversal:** Visits nodes in the order **left subtree, root, right subtree**. Finding the root element (from preorder) in the inorder array divides it into left and right subtrees.
+
+### Approach:
+1. **Identify the Root:**
+    - The first element of the preorder array is the root of the tree.
+2. **Split the Inorder Array:**
+    - Locate the root in the inorder array. The elements to the left belong to the left subtree, and those to the right belong to the right subtree.
+3. **Recursively Build Subtrees:**
+    - **Left Subtree:** Use the next part of the preorder array (whose length is equal to the number of elements in the left part of the inorder array) and the left portion of the inorder array.
+    - **Right Subtree:** Use the remaining part of the preorder array and the right portion of the inorder array.
+4. **Base Case:**
+    - When there are no elements left to process, return `null`.
+
+### Complexity:
+- **Time Complexity:** \(O(n)\), since each node is processed once.
+- **Space Complexity:** \(O(n)\) due to the recursion stack and storage for the constructed tree.
+
+This method reconstructs the binary tree uniquely because the combination of preorder and inorder traversals contains all the necessary information to determine the tree structure.
+
+[Solution Code](jav105ConstrucBinaryTreeFromPreoderAndInOrderTraversal/Solution.java)
 
 ## Problem #121: Best Time to Buy and Sell Stock
 
