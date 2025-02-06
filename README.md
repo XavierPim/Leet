@@ -53,7 +53,8 @@
 | 347       | Top K Frequent Elements                                   | [Link](#problem-347-top-frequent-elements)                                  | Java     |
 | 371       | Sum of Two Integers                                       | [Link](#problem-371-sum-of-two-integers)                                    | Java     |
 | 424       | Longest Repeating Character Replacement                   | [Link](#problem-424-longest-repeating-character-replacement)                | Java     |
-| 572       | Subtree of Another Tree                                   | [Link](#problem-subtree-of-another-tree)                                    | Java     |
+| 572       | Subtree of Another Tree                                   | [Link](#problem-572-subtree-of-another-tree)                                | Java     |
+| 647       | Palindromic Substrings                                    | [Link](#problem-647-palindromic-substrings)                                 | Java     |
 
 ---
 
@@ -1822,3 +1823,31 @@ A **DFS (Depth-First Search) approach** is suitable because:
 - **Space Complexity**: \(O(h)\) (Recursion depth, where `h` is the height of `root`).
 
 [Solution Code](jav572SubTreeOfAnotherTree/Solution.java)
+
+## Problem #647: Palindromic Substrings
+
+### Intuition:
+
+The problem requires counting all substrings that are palindromes. A brute-force approach would involve generating all possible substrings and checking if each is a palindrome, leading to an inefficient \(O(n^3)\) complexity. Instead, an **Expand Around Center** approach is optimal.
+
+Every palindrome has a **center**, and for each character in the string, we expand outward while the substring remains a palindrome.
+
+### Approach:
+
+1. **Treat each character as a potential palindrome center.**
+    - Expand outward while the left and right characters are equal.
+    - Count the number of valid palindromes.
+
+2. **Handle both odd-length and even-length palindromes.**
+    - **Odd-length palindromes:** Expand with a **single-character center** (e.g., `"aba"`).
+    - **Even-length palindromes:** Expand with a **two-character center** (e.g., `"abba"`).
+
+3. **Iterate through the string and expand from each index.**
+    - This ensures we count all palindromic substrings efficiently.
+
+### Complexity:
+
+- **Time Complexity:** \(O(n^2)\) – Each expansion runs in \(O(n)\), and we iterate over \(n\) centers.
+- **Space Complexity:** \(O(1)\) – No extra data structures are used, only variables.
+
+[Solution Code](jav647PalindromicSubstrings/Solution.java)
