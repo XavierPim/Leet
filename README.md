@@ -49,6 +49,7 @@
 | 242       | Valid Anagram                                             | [Link](#problem-242-valid-anagram)                                          | Java     |
 | 268       | Missing Number                                            | [Link](#problem-268-missing-number)                                         | Java     |
 | 297       | Serialize and Deserialize Binary Tree                     | [Link](#problem-297-serialize-and-deserialize-binary-tree)                  | Java     |
+| 322       | Coin Change                                               | [Link](#problem-322-coin-change)                                            | Java     |
 | 338       | Counting Bits                                             | [Link](#problem-338-counting-bits)                                          | Java     |
 | 347       | Top K Frequent Elements                                   | [Link](#problem-347-top-frequent-elements)                                  | Java     |
 | 371       | Sum of Two Integers                                       | [Link](#problem-371-sum-of-two-integers)                                    | Java     |
@@ -1641,7 +1642,36 @@ The problem requires **converting a binary tree into a string (serialization)** 
 - **Space Complexity**: \(O(n)\)
     - The queue stores all nodes during traversal.
 
-[Solution Code](jav297/Solution.java)
+[Solution Code](jav297SerializeAndDeserializeBinaryTree/Codec.java)
+
+## Problem #322: Coin Change
+
+### Intuition:
+
+The problem requires finding the **minimum number of coins** to reach a given amount. A **brute-force recursive approach** would try every possible combination, leading to exponential time complexity. To optimize this, we use **memoization** to store previously computed results, reducing redundant calculations.
+
+### Approach:
+
+1. **Sort the Coins (Optimization Step)**
+    - Sorting the coins in descending order allows us to **try larger denominations first**, minimizing recursion depth.
+
+2. **Recursive Function with Memoization**
+    - If `amount == 0`, return `0` (base case).
+    - If `amount < 0`, return `Integer.MAX_VALUE` (invalid case).
+    - If `dp[amount]` is already computed, return the stored result.
+    - Try every coin in `coins`, subtracting from `amount`, and recursively find the minimum number of coins.
+
+3. **Store Results in `dp[]`**
+    - Before returning, store the computed `dp[amount]` to avoid redundant calculations.
+
+### Complexity:
+
+- **Time Complexity:** \(O(n \times \text{amount})\)
+    - Each subproblem is computed once and stored, significantly reducing recursive calls.
+- **Space Complexity:** \(O(\text{amount})\)
+    - Memoization array `dp[]` stores computed results.
+
+[Solution Code](jav322CoinChange/Solution.java)
 
 ## Problem #338: Counting Bits
 
