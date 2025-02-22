@@ -49,6 +49,7 @@
 | 242       | Valid Anagram                                             | [Link](#problem-242-valid-anagram)                                          | Java     |
 | 268       | Missing Number                                            | [Link](#problem-268-missing-number)                                         | Java     |
 | 297       | Serialize and Deserialize Binary Tree                     | [Link](#problem-297-serialize-and-deserialize-binary-tree)                  | Java     |
+| 300       | Longest Increasing Subsequence                            | [Link](#problem-300-longest-increasing-subsequnce)                          | Java     |
 | 322       | Coin Change                                               | [Link](#problem-322-coin-change)                                            | Java     |
 | 338       | Counting Bits                                             | [Link](#problem-338-counting-bits)                                          | Java     |
 | 347       | Top K Frequent Elements                                   | [Link](#problem-347-top-frequent-elements)                                  | Java     |
@@ -1643,6 +1644,36 @@ The problem requires **converting a binary tree into a string (serialization)** 
     - The queue stores all nodes during traversal.
 
 [Solution Code](jav297SerializeAndDeserializeBinaryTree/Codec.java)
+
+## Problem #300: Longest Increasing Subsequence
+
+### Intuition:
+
+The problem requires finding the **longest increasing subsequence (LIS)** in an array. A common approach is to use **dynamic programming (DP)**, where we build up solutions for subproblems (i.e., LIS ending at each index) and use them to solve the overall problem.
+
+### Approach:
+
+- Initialize a DP array `dp[]` where `dp[i]` represents the **length of the longest increasing subsequence ending at index `i`**.
+    - Start with `dp[i] = 1` for all `i` since each element alone is a valid subsequence.
+
+- **Outer loop (`i`)** iterates through the array from `0` to `n-1`.
+    - For each `i`, use an **inner loop (`j`)** from `0` to `i-1` to compare elements.
+
+- **Compare `nums[j]` and `nums[i]`:**
+    - If `nums[i] > nums[j]`, it means `nums[i]` can extend the subsequence ending at `j`.
+    - Update `dp[i] = max(dp[i], dp[j] + 1)`.
+
+- After filling the `dp[]` array, the length of the **longest increasing subsequence** is the **maximum value in `dp[]`**.
+
+### Complexity:
+
+- **Time Complexity:** \(O(n^2)\)
+    - For each element `i`, we compare it with all previous elements `j` (nested loops).
+
+- **Space Complexity:** \(O(n)\)
+    - The `dp[]` array stores LIS lengths for each index.
+
+[Solution Code](jav3300LongestIncreasingSubsequence/Solution.java)
 
 ## Problem #322: Coin Change
 
