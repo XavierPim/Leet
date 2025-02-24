@@ -2,23 +2,19 @@
 #include <iostream>
 using namespace std;
 
-int main() {
-
-
-    return 0;
+int f(int &x, int &y) {
+    x = 3;
+    y = 4;
+    return x + y;
 }
 
-
-
-
-
-
-
-
-
-
-
-
+int main() {
+    int x = 5;
+    int y = 6;
+    int z = f(x, y);
+    cout << x << y << z << endl;
+    return 0;
+}
 
 
 // int main() {
