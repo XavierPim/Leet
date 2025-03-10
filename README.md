@@ -34,7 +34,8 @@
 | 104       | Maximum Depth of Binary Tree                              | [Link](#problem-104-maximum-depth-of-binary-tree)                           | Java     |
 | 105       | Construct Binary Tree From Preorder and Inorder Traversal | [Link](#problem-construct-binary-tree-from-preorder-and-inorder-travaersal) | Java     |
 | 121       | Best Time to Buy and Sell                                 | [Link](#problem-121-best-time-to-buy-and-sell-stock)                        | C++      |
-| 124       | Binary Tree Max Path Sum                                  | [Link](#problem-124-binary-tree-max-path-sum)                               | Java     |
+| 124       | Binary Tree Max Path Sum                                  | [Link](#problem-124-binary-tree-maximum-path-sum)                           | Java     |
+| 133       | Clone Graph                                               | [Link](#problem-133-clone-graph)                                            | Java     |
 | 141       | Link List Cycle                                           | [Link](#problem-141-linked-list-cycle)                                      | Java     |
 | 143       | Reorder List                                              | [Link](#problem-143-reorder-list)                                           | Java     |
 | 150       | Evaluate Reverse Polish Notation                          | [Link](#problem-150-evaluate-reverse-polish-notation)                       | C++      |
@@ -1179,6 +1180,37 @@ Since each subtree is also a binary tree, we can use a **recursive Depth-First S
     - The recursion stack depth is at most the tree height \(h\).
 
 [Solution Code](jav124BinaryTreeMaxPathSum/Solution.java)
+
+## Problem #133: Clone Graph
+
+### Intuition:
+
+The problem requires creating a **deep copy** of an undirected graph where each node contains a **value** and a list of its **neighbors**. Since the graph is connected, we can use either **DFS (Depth-First Search)** or **BFS (Breadth-First Search)** to traverse and clone it.
+
+A **hashmap (`Map<Node, Node>`)** is used to track already-cloned nodes, ensuring we do not clone a node multiple times and avoid infinite recursion.
+
+### Approach:
+
+1. **Use a HashMap (`Map<Node, Node>`)**
+    - Key: Original Node
+    - Value: Cloned Node
+    - This helps track already-cloned nodes and avoids cycles.
+
+2. **Graph Traversal Using DFS (Recursive) or BFS (Iterative)**
+    - If a node has already been cloned, return it from the hashmap.
+    - Otherwise, create a new node and store it in the hashmap.
+    - Recursively or iteratively **clone all neighbors** and connect them to the new node.
+
+3. **Return the cloned version of the input node**.
+
+### Complexity:
+
+- **Time Complexity:** \(O(N + E)\)
+    - Each node and edge is processed exactly once.
+- **Space Complexity:** \(O(N)\)
+    - The HashMap stores references to all nodes, preventing cycles.
+
+[Solution Code](jav133CloneGraph/Solution.java)
 
 ## Problem #141: Linked List Cycle
 
